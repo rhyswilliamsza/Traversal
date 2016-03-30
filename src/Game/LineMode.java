@@ -6,7 +6,7 @@ package Game;
  * me@rhyswilliams.co.za
  */
 public class LineMode extends Core {
-    public LineMode(String boardPath, String movesPath) {
-
+    public LineMode(String path) {
+        super(path);
     }
 }
