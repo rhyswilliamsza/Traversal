@@ -2,6 +2,8 @@ package Game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  * This file was created by Rhys Williams,
@@ -9,35 +11,63 @@ import java.awt.*;
  * me@rhyswilliams.co.za
  */
 public class GraphicMode extends Core {
-    JFrame frame;
-    JPanel game;
+    JFrame gameFrame;
+    JPanel gamePanel;
+    KeyListener listener;
 
     public GraphicMode(String path) {
         super(path);
-        frame = new JFrame();
-        game = new JPanel(new GridBagLayout());
-        game.setBackground(Color.LIGHT_GRAY);
+        generateKeyListener();
+        generateFrame();
+        generateGamePanel();
         draw();
     }
 
+    private void generateFrame() {
+        gameFrame = new JFrame();
+        gameFrame.addKeyListener(listener);
+        gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        gameFrame.setResizable(false);
+    }
+
+    private void generateGamePanel() {
+        gamePanel = new JPanel(new GridBagLayout());
+        gamePanel.setBackground(Color.LIGHT_GRAY);
+    }
+
+    private void generateKeyListener() {
+        listener = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                requestMove("" + e.getKeyChar());
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        };
+    }
+
     public void draw() {
-        frame.remove(game);
-        frame.setTitle("Rhys Williams | " + boardTitle);
+        gamePanel.removeAll();
+        gameFrame.setTitle("Rhys Williams | " + boardTitle);
         GridBagConstraints c = new GridBagConstraints();
         for (int height = 0; height < board.length; height++) {
             for (int width = 0; width < board[height].length; width++) {
                 c.gridy = height;
                 c.gridx = width;
-                game.add(board[height][width].getIcon(), c);
+                gamePanel.add(board[height][width].getIcon(), c);
             }
         }
-        frame.add(game);
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-    public void moveLeft() {
-        super.requestMove("h");
-        draw();
+        gameFrame.add(gamePanel);
+        gameFrame.pack();
+        gameFrame.setVisible(true);
+        gameFrame.repaint();
     }
 }

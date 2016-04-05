@@ -42,6 +42,7 @@ public class Core {
     }
 
     public void requestMove(String key) {
+        System.out.println(key);
         switch (key) {
             case "h":
                 moveLeft();
@@ -62,13 +63,19 @@ public class Core {
     }
 
     private void moveLeft() {
-        Block temp = board[0][2];
-        board[0][2] = board[1][1];
-        board[1][1] = temp;
+
     }
 
     private void moveRight() {
-
+        for (int height = 0; height < board.length; height++) {
+            for (int width = 0; width < board[height].length; width++) {
+                if (board[height][width].moveRight()) {
+                    Block temp = board[0][0];
+                    board[0][0] = board[0][1];
+                    board[0][1] = temp;
+                }
+            }
+        }
     }
 
     private void moveDown() {

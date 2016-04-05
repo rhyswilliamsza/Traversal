@@ -16,27 +16,49 @@ public class Block {
     public Block(String type) {
         blockType = type;
         try {
-            enabledIcon.setIcon(new ImageIcon(this.getClass().getResource("/Components/Images/" + blockType + "_enabled.png")));
+            enabledIcon.setIcon(new ImageIcon(this.getClass().getResource("/Components/Images/tvl_" + blockType + ".png")));
             try {
-                disabledIcon.setIcon(new ImageIcon(this.getClass().getResource("/Components/Images/" + blockType + "_disabled.png")));
+                disabledIcon.setIcon(new ImageIcon(this.getClass().getResource("/Components/Images/tvl_" + blockType + "_disabled.png")));
             } catch (Exception e) {
-                disabledIcon.setIcon(new ImageIcon(this.getClass().getResource("/Components/Images/" + blockType + "_enabled.png")));
+                disabledIcon.setIcon(new ImageIcon(this.getClass().getResource("/Components/Images/tvl_" + blockType + ".png")));
             }
         } catch (Exception e) {
             System.out.println("An Image File is Missing");
         }
     }
 
-    public void setEnabled() {
-        enabled = true;
+    public boolean moveLeft() {
+        switch (blockType) {
+            default: {
+                return false;
+            }
+        }
     }
 
-    public void setDisabled() {
-        enabled = false;
+    public boolean moveRight() {
+        switch (blockType) {
+            case "s":
+                return true;
+            default: {
+                return false;
+            }
+        }
     }
 
-    public String getBlockType() {
-        return blockType;
+    public boolean moveDown() {
+        switch (blockType) {
+            default: {
+                return false;
+            }
+        }
+    }
+
+    public boolean moveUp() {
+        switch (blockType) {
+            default: {
+                return false;
+            }
+        }
     }
 
     public JLabel getIcon() {
