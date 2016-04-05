@@ -16,6 +16,7 @@ public class GraphicMode extends Core {
         super(path);
         frame = new JFrame();
         game = new JPanel(new GridBagLayout());
+        game.setBackground(Color.LIGHT_GRAY);
         draw();
     }
 
@@ -36,7 +37,7 @@ public class GraphicMode extends Core {
     }
 
     public void moveLeft() {
-        super.moveLeft();
+        super.requestMove("h");
         draw();
     }
 }

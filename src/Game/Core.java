@@ -41,7 +41,7 @@ public class Core {
         }
     }
 
-    private void moveRequested(String key) {
+    public void requestMove(String key) {
         switch (key) {
             case "h":
                 moveLeft();
@@ -61,10 +61,10 @@ public class Core {
         }
     }
 
-    public void moveLeft() {
-        Block temp = board[1][6];
-        board[1][6] = board[1][2];
-        board[1][2] = temp;
+    private void moveLeft() {
+        Block temp = board[0][2];
+        board[0][2] = board[1][1];
+        board[1][1] = temp;
     }
 
     private void moveRight() {
