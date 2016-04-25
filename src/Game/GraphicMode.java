@@ -45,6 +45,7 @@ public class GraphicMode extends Core {
             @Override
             public void keyPressed(KeyEvent e) {
                 requestMove("" + e.getKeyChar());
+                draw();
             }
 
             @Override

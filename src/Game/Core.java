@@ -70,10 +70,18 @@ public class Core {
         for (int height = 0; height < board.length; height++) {
             for (int width = 0; width < board[height].length; width++) {
                 if (board[height][width].moveRight()) {
-                    Block temp = board[0][0];
-                    board[0][0] = board[0][1];
-                    board[0][1] = temp;
+                    Block temp = board[height][width];
+                    board[height][width] = board[height][height+1];
+                    board[height][width+1] = temp;
+                    width++;
                 }
+            }
+        }
+
+        for (int height = 0; height < board.length; height++) {
+            System.out.println();
+            for (int width = 0; width < board[height].length; width++) {
+                System.out.print(board[height][width].getBlockType());
             }
         }
     }

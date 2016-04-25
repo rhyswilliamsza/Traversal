@@ -27,6 +27,10 @@ public class Block {
         }
     }
 
+    public String getBlockType () {
+        return blockType;
+    }
+
     public boolean moveLeft() {
         switch (blockType) {
             default: {
