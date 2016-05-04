@@ -63,7 +63,16 @@ public class Core {
     }
 
     private void moveLeft() {
-
+        for (int height = 0; height < board.length; height++) {
+            for (int width = 0; width < board[height].length; width++) {
+                if (board[height][width].moveLeft()) {
+                    Block temp = board[height][width];
+                    board[height][width] = board[height][width - 1];
+                    board[height][width - 1] = temp;
+                    height++;
+                }
+            }
+        }
     }
 
     private void moveRight() {
@@ -71,27 +80,42 @@ public class Core {
             for (int width = 0; width < board[height].length; width++) {
                 if (board[height][width].moveRight()) {
                     Block temp = board[height][width];
-                    board[height][width] = board[height][height+1];
-                    board[height][width+1] = temp;
+                    board[height][width] = board[height][width + 1];
+                    board[height][width + 1] = temp;
                     width++;
                 }
-            }
-        }
-
-        for (int height = 0; height < board.length; height++) {
-            System.out.println();
-            for (int width = 0; width < board[height].length; width++) {
-                System.out.print(board[height][width].getBlockType());
             }
         }
     }
 
     private void moveDown() {
+        try {
+            for (int height = 0; height < board.length; height++) {
+                for (int width = 0; width < board[height].length; width++) {
+                    if (board[height][width].moveDown()) {
+                        Block temp = board[height][width];
+                        board[height][width] = board[height + 1][width];
+                        board[height + 1][width] = temp;
+                        height++;
+                    }
+                }
+            }
+        } catch (Exception e) {
 
+        }
     }
 
     private void moveUp() {
-
+        for (int height = 0; height < board.length; height++) {
+            for (int width = 0; width < board[height].length; width++) {
+                if (board[height][width].moveUp()) {
+                    Block temp = board[height][width];
+                    board[height][width] = board[height - 1][width];
+                    board[height - 1][width] = temp;
+                    height++;
+                }
+            }
+        }
     }
 
     private void exit() {

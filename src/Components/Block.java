@@ -27,12 +27,14 @@ public class Block {
         }
     }
 
-    public String getBlockType () {
+    public String getBlockType() {
         return blockType;
     }
 
     public boolean moveLeft() {
         switch (blockType) {
+            case "s":
+                return true;
             default: {
                 return false;
             }
@@ -51,6 +53,8 @@ public class Block {
 
     public boolean moveDown() {
         switch (blockType) {
+            case "s":
+                return true;
             default: {
                 return false;
             }
@@ -59,6 +63,8 @@ public class Block {
 
     public boolean moveUp() {
         switch (blockType) {
+            case "s":
+                return true;
             default: {
                 return false;
             }
