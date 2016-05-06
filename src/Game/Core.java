@@ -12,7 +12,7 @@ import java.util.Scanner;
  * me@rhyswilliams.co.za
  */
 public class Core {
-    Block[][] board;
+    Block[][][] board;
     String boardTitle;
 
     public Core(String boardPath) {
@@ -27,12 +27,12 @@ public class Core {
             int height = boardDimensionsScan.nextInt();
             int width = boardDimensionsScan.nextInt();
             boardDimensionsScan.close();
-            board = new Block[height][width];
+            board = new Block[height][width][3];
 
             for (int i = 0; i < height; i++) {
                 Scanner line = new Scanner(boardScan.nextLine()).useDelimiter("");
                 for (int j = 0; j < width; j++) {
-                    board[i][j] = new Block(line.next());
+                    board[i][j][0] = Factories.makeBlock(line.next());
                 }
                 line.close();
             }
@@ -65,12 +65,7 @@ public class Core {
     private void moveLeft() {
         for (int height = 0; height < board.length; height++) {
             for (int width = 0; width < board[height].length; width++) {
-                if (board[height][width].moveLeft()) {
-                    Block temp = board[height][width];
-                    board[height][width] = board[height][width - 1];
-                    board[height][width - 1] = temp;
-                    height++;
-                }
+
             }
         }
     }
@@ -78,47 +73,28 @@ public class Core {
     private void moveRight() {
         for (int height = 0; height < board.length; height++) {
             for (int width = 0; width < board[height].length; width++) {
-                if (board[height][width].moveRight()) {
-                    Block temp = board[height][width];
-                    board[height][width] = board[height][width + 1];
-                    board[height][width + 1] = temp;
-                    width++;
-                }
+
             }
         }
     }
 
     private void moveDown() {
-        try {
-            for (int height = 0; height < board.length; height++) {
-                for (int width = 0; width < board[height].length; width++) {
-                    if (board[height][width].moveDown()) {
-                        Block temp = board[height][width];
-                        board[height][width] = board[height + 1][width];
-                        board[height + 1][width] = temp;
-                        height++;
-                    }
-                }
-            }
-        } catch (Exception e) {
+        for (int height = 0; height < board.length; height++) {
+            for (int width = 0; width < board[height].length; width++) {
 
+            }
         }
     }
 
     private void moveUp() {
         for (int height = 0; height < board.length; height++) {
             for (int width = 0; width < board[height].length; width++) {
-                if (board[height][width].moveUp()) {
-                    Block temp = board[height][width];
-                    board[height][width] = board[height - 1][width];
-                    board[height - 1][width] = temp;
-                    height++;
-                }
+
             }
         }
     }
 
     private void exit() {
-
+        System.exit(0);
     }
 }

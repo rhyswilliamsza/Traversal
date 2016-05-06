@@ -32,7 +32,6 @@ public class GraphicMode extends Core {
 
     private void generateGamePanel() {
         gamePanel = new JPanel(new GridBagLayout());
-        gamePanel.setBackground(Color.LIGHT_GRAY);
     }
 
     private void generateKeyListener() {
@@ -63,7 +62,7 @@ public class GraphicMode extends Core {
             for (int width = 0; width < board[height].length; width++) {
                 c.gridy = height;
                 c.gridx = width;
-                gamePanel.add(board[height][width].getIcon(), c);
+                gamePanel.add(board[height][width][0].getIcon(), c);
             }
         }
         gameFrame.add(gamePanel);
