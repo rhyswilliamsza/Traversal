@@ -5,6 +5,6 @@
  */
 public class Launcher {
     public static void main(String[] args) {
-        Game.GraphicMode test = new Game.GraphicMode("D:\\Data\\Projects\\Intellij\\Traversal\\src\\testBoard.txt");
+        Game.GraphicMode test = new Game.GraphicMode("/Users/rhys/IdeaProjects/Traversal/src/testBoard.txt");
     }
 }

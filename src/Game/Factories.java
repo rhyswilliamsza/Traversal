@@ -1,6 +1,6 @@
 package Game;
 
-import Components.*;
+import Blocks.*;
 
 /**
  * Created by Rhys Williams
@@ -70,7 +70,7 @@ public class Factories {
                 return new Ports(Ports.OPEN);
             }
             default: {
-                return new Block(".");
+                return new Block(".", new int[]{}, new int[]{}, Block.END_GAME);
             }
         }
     }

@@ -1,4 +1,4 @@
-package Components;
+package Blocks;
 
 /**
  * Created by Rhys Williams
@@ -7,7 +7,6 @@ package Components;
  */
 public class Target extends Block {
     public Target() {
-        super("t");
-        this.blockType = "t";
+        super("t", new int[]{}, new int[]{}, WIN_GAME);
     }
 }

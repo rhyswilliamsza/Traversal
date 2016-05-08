@@ -1,4 +1,4 @@
-package Components;
+package Blocks;
 
 /**
  * Created by Rhys Williams
@@ -7,7 +7,6 @@ package Components;
  */
 public class Wall extends Block {
     public Wall() {
-        super("x");
-        this.blockType = "x";
+        super("x", new int[]{}, new int[]{}, END_GAME);
     }
 }

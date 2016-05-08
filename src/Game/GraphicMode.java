@@ -43,7 +43,7 @@ public class GraphicMode extends Core {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                requestMove("" + e.getKeyChar());
+                moveKeyRequested("" + e.getKeyChar());
                 draw();
             }
 
@@ -62,7 +62,7 @@ public class GraphicMode extends Core {
             for (int width = 0; width < board[height].length; width++) {
                 c.gridy = height;
                 c.gridx = width;
-                gamePanel.add(board[height][width][0].getIcon(), c);
+                gamePanel.add(board[height][width].get(board[height][width].size() - 1).getIcon(), c);
             }
         }
         gameFrame.add(gamePanel);

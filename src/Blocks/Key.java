@@ -1,4 +1,4 @@
-package Components;
+package Blocks;
 
 /**
  * Created by Rhys Williams
@@ -10,7 +10,6 @@ public class Key extends Block {
     public static int UNAVAILABLE = 1;
 
     public Key() {
-        super("k");
-        this.blockType = "t";
+        super("k", new int[]{}, new int[]{}, PASSOVER);
     }
 }

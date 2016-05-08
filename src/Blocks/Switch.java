@@ -1,4 +1,4 @@
-package Components;
+package Blocks;
 
 /**
  * Created by Rhys Williams
@@ -13,7 +13,6 @@ public class Switch extends Block {
     public static int CLOSED_SWITCH = 1;
 
     public Switch(int status, int direction) {
-        super("t");
-        this.blockType = "t";
+        super("t", new int[]{}, new int[]{}, PASSOVER);
     }
 }
