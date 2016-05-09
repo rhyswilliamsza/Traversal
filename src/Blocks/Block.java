@@ -20,14 +20,14 @@ public class Block {
     public final static int MOVES_LEFT = 3;
 
     //Variables used by the class
-    private int moveDirection[];
-    private int reactTrigger[];
-    private int actionWhenTouched;
-    private JLabel icon;
-    private String blockType;
-    private boolean justMoved = false;
-    private boolean canWrapX = false;
-    private boolean canWrapY = false;
+    protected int moveDirection[];
+    protected int reactTrigger[];
+    protected int actionWhenTouched;
+    protected JLabel icon;
+    protected String blockType;
+    protected boolean justMoved = false;
+    protected boolean canWrapX = false;
+    protected boolean canWrapY = false;
 
     /**
      * @param blockType
@@ -95,7 +95,7 @@ public class Block {
         return icon;
     }
 
-    private boolean checkIfShouldReact(int triggerKey) {
+    protected boolean checkIfShouldReact(int triggerKey) {
         for (int i = 0; i < reactTrigger.length; i++) {
             if (reactTrigger[i] == triggerKey) {
                 return true;

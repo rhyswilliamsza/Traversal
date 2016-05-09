@@ -56,6 +56,7 @@ public class GraphicMode extends Core {
 
     public void draw() {
         gamePanel.removeAll();
+        gamePanel.setBackground(Color.lightGray);
         gameFrame.setTitle("Rhys Williams | " + boardTitle);
         GridBagConstraints c = new GridBagConstraints();
         for (int height = 0; height < board.length; height++) {

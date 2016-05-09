@@ -54,6 +54,16 @@ public class Core {
         }
     }
 
+    public void printBoard() {
+        for (int yPos = 0; yPos < board.length; yPos++) {
+            System.out.println();
+            for (int xPos = 0; xPos < board[yPos].length; xPos++) {
+                ArrayList<Block> currentCell = board[yPos][xPos];
+                System.out.print(board[yPos][xPos].get(currentCell.size() - 1).getBlockType());
+            }
+        }
+    }
+
     public void moveKeyRequested(String key) {
         switch (key) {
             case "h":
@@ -84,6 +94,10 @@ public class Core {
         }
     }
 
+    private void playerRules () {
+
+    }
+
     private void makeMove(int[] source, int[] target) {
         int sourceY = source[0];
         int sourceX = source[1];
@@ -92,70 +106,82 @@ public class Core {
         int targetY = target[0];
         int targetX = target[1];
 
-        if (!board[sourceX][sourceY].get(sourceZ).hasJustMoved()) {
-            //Check for wrap around
-            if (targetX < 0) {
+        if (!board[sourceY][sourceX].get(sourceZ).hasJustMoved()) {
+            //Create new block object from object in original cell
+            Block sourceBlock = board[sourceY][sourceX].get(sourceZ);
+            sourceBlock.setJustMoved(true);
 
+            //Check if block needs to wrap around X.
+            if (targetX < 0) {
+                if (sourceBlock.canWrapX()) {
+                    targetX = board[sourceY].length - 1;
+                } else {
+                    targetX = sourceX;
+                }
             }
+            if (targetX >= board[sourceY].length) {
+                if (sourceBlock.canWrapX()) {
+                    targetX = 0;
+                } else {
+                    targetX = sourceX;
+                }
+            }
+
+            //Check if block needs to wrap around Y
+            if (targetY < 0) {
+                if (sourceBlock.canWrapY()) {
+                    targetY = board.length - 1;
+                } else {
+                    targetY = sourceY;
+                }
+            }
+            if (targetY >= board.length) {
+                if (sourceBlock.canWrapY()) {
+                    targetY = 0;
+                } else {
+                    targetY = sourceY;
+                }
+            }
+
+            //Add source block to target
+            board[targetY][targetX].add(sourceBlock);
+
+            //Remove block from source
+            board[sourceY][sourceX].remove(sourceZ);
+
+            //If there are no blocks in the old cell, create an empty block.
+            if (board[sourceY][sourceX].size() == 0) {
+                board[sourceY][sourceX].add(Factories.makeBlock("."));
+            }
+
         }
     }
 
     private void moveRequested(int triggerKey) {
         for (int yPos = 0; yPos < board.length; yPos++) {
             for (int xPos = 0; xPos < board[yPos].length; xPos++) {
-                ArrayList<Block> currentCell = board[yPos][xPos];
-                for (int zPos = 0; zPos < currentCell.size(); zPos++) {
-                    Block currentBlock = currentCell.get(zPos);
-
+                for (int zPos = board[yPos][xPos].size() -1; zPos >= 0; zPos--) {
+                    Block currentBlock = board[yPos][xPos].get(zPos);
                     if (!currentBlock.hasJustMoved()) {
 
                         if (currentBlock.movesUp(triggerKey)) {
-                            makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos + 1, xPos});
-                        }
-
-                        if (currentBlock.movesDown(triggerKey)) {
                             makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos - 1, xPos});
                         }
-
+                        if (currentBlock.movesDown(triggerKey)) {
+                            makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos + 1, xPos});
+                        }
                         if (currentBlock.movesLeft(triggerKey)) {
                             makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos - 1});
                         }
-
                         if (currentBlock.movesRight(triggerKey)) {
-                            makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos + 1, xPos + 1});
-                        }
-                    }
-
-                    if (!board[yPos][xPos].get(zPos).hasJustMoved()) {
-                        //Get existing block to move
-                        Block existingBlock = board[yPos][xPos].get(zPos);
-
-                        //Set new position information.
-                        int newYPos = yPos + 1;
-                        int newXPos = xPos;
-
-                        //Check if bounds are reached, otherwise wrap around.
-
-
-                        //Create new block object from object in original cell
-                        Block newBlock = board[yPos][xPos].get(zPos);
-                        newBlock.setJustMoved(true);
-
-                        //Add that block object to target cell
-                        board[newYPos][newXPos].add(newBlock);
-                        board[yPos][xPos].remove(zPos);
-
-                        //If there are no blocks in the old cell, create an empty block.
-                        if (board[yPos][xPos].size() == 0) {
-                            board[yPos][xPos].add(Factories.makeBlock("."));
+                            makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos + 1});
                         }
                     }
                 }
             }
         }
+        resetJustMovedStatus();
     }
-
-}
 
     private void exit() {
         System.exit(0);
