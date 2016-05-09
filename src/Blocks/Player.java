@@ -12,9 +12,9 @@ public class Player extends Block {
     }
 
     public boolean movesUp(int triggerKey) {
-            if (triggerKey == MOVES_UP) {
-                return true;
-            }
+        if (triggerKey == MOVES_UP) {
+            return true;
+        }
         return false;
     }
 

@@ -10,12 +10,12 @@ public class Mover extends Block {
     public static int HORIZONTAL_MOVER = 1;
 
     public Mover(int type, int direction) {
-        super(getPieceChar(type, direction), getReactTrigger(type), new int[]{direction}, END_GAME);
+        super(getBlockChar(type, direction), getMoveTrigger(type), new int[]{direction}, END_GAME);
         this.setCanWrapX(true);
         this.setCanWrapY(true);
     }
 
-    private static int[] getReactTrigger(int type) {
+    private static int[] getMoveTrigger(int type) {
         if (type == VERTICAL_MOVER) {
             return new int[]{MOVES_UP, MOVES_DOWN};
         }
@@ -27,7 +27,7 @@ public class Mover extends Block {
         return null;
     }
 
-    private static String getPieceChar(int type, int direction) {
+    private static String getBlockChar(int type, int direction) {
         if (type == VERTICAL_MOVER) {
             if (direction == MOVES_UP) {
                 return "U";

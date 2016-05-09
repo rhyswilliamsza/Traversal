@@ -8,12 +8,12 @@ import javax.swing.*;
  * me@rhyswilliams.co.za
  */
 public class Block {
-    //Static actionWhenTouched Variables
+    //Static actionWhenPlayerTouch Variables
     public final static int PASSOVER = 0;
     public final static int END_GAME = 1;
     public final static int WIN_GAME = 2;
 
-    //Static moveDirection Variables
+    //Static moveDirection and moveTrigger Variables
     public final static int MOVES_UP = 0;
     public final static int MOVES_RIGHT = 1;
     public final static int MOVES_DOWN = 2;
@@ -21,8 +21,8 @@ public class Block {
 
     //Variables used by the class
     protected int moveDirection[];
-    protected int reactTrigger[];
-    protected int actionWhenTouched;
+    protected int moveTrigger[];
+    protected int actionWhenPlayerTouch;
     protected JLabel icon;
     protected String blockType;
     protected boolean justMoved = false;
@@ -31,15 +31,15 @@ public class Block {
 
     /**
      * @param blockType
-     * @param reactTrigger
+     * @param moveTrigger
      * @param moveDirection
-     * @param actionWhenTouched
+     * @param actionWhenPlayerTouch
      */
-    public Block(String blockType, int[] reactTrigger, int[] moveDirection, int actionWhenTouched) {
+    public Block(String blockType, int[] moveTrigger, int[] moveDirection, int actionWhenPlayerTouch) {
         //Assign params to variables
         this.blockType = blockType;
-        this.actionWhenTouched = actionWhenTouched;
-        this.reactTrigger = reactTrigger;
+        this.actionWhenPlayerTouch = actionWhenPlayerTouch;
+        this.moveTrigger = moveTrigger;
         this.moveDirection = moveDirection;
 
         //Generate Icon
@@ -74,8 +74,16 @@ public class Block {
         return blockType;
     }
 
-    public int getActionWhenTouched() {
-        return actionWhenTouched;
+    public void setBlockType(String blockType) {
+        this.blockType = blockType;
+    }
+
+    public int getActionWhenPlayerTouch() {
+        return actionWhenPlayerTouch;
+    }
+
+    public void setActionWhenPlayerTouch(int actionWhenPlayerTouch) {
+        this.actionWhenPlayerTouch = actionWhenPlayerTouch;
     }
 
     private void generateIcon() {
@@ -92,12 +100,13 @@ public class Block {
     }
 
     public JLabel getIcon() {
+        generateIcon();
         return icon;
     }
 
-    protected boolean checkIfShouldReact(int triggerKey) {
-        for (int i = 0; i < reactTrigger.length; i++) {
-            if (reactTrigger[i] == triggerKey) {
+    protected boolean checkIfReact(int triggerKey) {
+        for (int i = 0; i < moveTrigger.length; i++) {
+            if (moveTrigger[i] == triggerKey) {
                 return true;
             }
         }
@@ -105,7 +114,7 @@ public class Block {
     }
 
     public boolean movesUp(int triggerKey) {
-        if (checkIfShouldReact(triggerKey)) {
+        if (checkIfReact(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_UP) {
                     return true;
@@ -115,8 +124,12 @@ public class Block {
         return false;
     }
 
+    public void moveMade(int move) {
+        //Overwrite this method in children for action
+    }
+
     public boolean movesDown(int triggerKey) {
-        if (checkIfShouldReact(triggerKey)) {
+        if (checkIfReact(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_DOWN) {
                     return true;
@@ -127,7 +140,7 @@ public class Block {
     }
 
     public boolean movesRight(int triggerKey) {
-        if (checkIfShouldReact(triggerKey)) {
+        if (checkIfReact(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_RIGHT) {
                     return true;
@@ -138,7 +151,7 @@ public class Block {
     }
 
     public boolean movesLeft(int triggerKey) {
-        if (checkIfShouldReact(triggerKey)) {
+        if (checkIfReact(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_LEFT) {
                     return true;
