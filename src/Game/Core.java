@@ -81,6 +81,7 @@ public class Core {
     }
 
     private void moveRequest(int triggerKey) {
+        boolean moved = false;
         for (int yPos = 0; yPos < board.length; yPos++) {
             for (int xPos = 0; xPos < board[yPos].length; xPos++) {
                 for (int zPos = board[yPos][xPos].size() - 1; zPos >= 0; zPos--) {
@@ -93,26 +94,31 @@ public class Core {
                         //Check which move was made and run the doMove method
                         if (currentBlock.getMovesUp(triggerKey)) {
                             doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos - 1, xPos});
-                            justMoved();
+                            moved = true;
                         }
                         if (currentBlock.getMovesDown(triggerKey)) {
                             doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos + 1, xPos});
-                            justMoved();
+                            moved = true;
                         }
                         if (currentBlock.getMovesLeft(triggerKey)) {
                             doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos - 1});
-                            justMoved();
+                            moved = true;
                         }
                         if (currentBlock.getMovesRight(triggerKey)) {
                             doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos + 1});
-                            justMoved();
+                            moved = true;
                         }
                     }
                 }
             }
         }
-        //Reset the just moved status after processing has completed.
-        resetJustMovedStatus();
+
+        //Do actions if any pieces were moved
+        if (moved) {
+            justMoved();
+            resetJustMovedStatus();
+        }
+
     }
 
     private void doMove(int[] source, int[] target) {
@@ -211,7 +217,7 @@ public class Core {
             }
 
             if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getActionWhenPlayerTouch() == Block.WIN_GAME) {
-                System.out.println("You won!");
+                outputAndExit("You won!");
             }
 
             if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getActionWhenPlayerTouch() == Block.END_GAME) {

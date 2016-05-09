@@ -28,8 +28,6 @@ public class GraphicMode extends Core {
         gameFrame.addKeyListener(listener);
         gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         gameFrame.setResizable(false);
-        gameFrame.pack();
-        gameFrame.setLocationRelativeTo(null);
     }
 
     private void generateGamePanel() {
@@ -58,8 +56,9 @@ public class GraphicMode extends Core {
 
     public void draw() {
         gamePanel.removeAll();
-        gamePanel.setBackground(Color.lightGray);
+        gamePanel.setBackground(new Color(37, 116, 169));
         gameFrame.setTitle("Rhys Williams | " + boardTitle);
+
         GridBagConstraints c = new GridBagConstraints();
         for (int height = 0; height < board.length; height++) {
             for (int width = 0; width < board[height].length; width++) {
@@ -69,8 +68,9 @@ public class GraphicMode extends Core {
             }
         }
         gameFrame.add(gamePanel);
-        gameFrame.pack();
-        gameFrame.setVisible(true);
         gameFrame.repaint();
+        gameFrame.pack();
+        gameFrame.setLocationRelativeTo(null);
+        gameFrame.setVisible(true);
     }
 }

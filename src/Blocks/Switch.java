@@ -15,12 +15,12 @@ public class Switch extends Block {
     int status;
 
     public Switch(int status, int type) {
-        super(getBlockChar(status, type), getMoveTrigger(type), new int[]{}, getActionWhenPlayerTouch(status));
+        super(getBlockChar(status, type), getTrigger(type), new int[]{}, getActionWhenPlayerTouch(status));
         this.type = type;
         this.status = status;
     }
 
-    private static int[] getMoveTrigger(int direction) {
+    private static int[] getTrigger(int direction) {
         if (direction == VERTICAL_SWITCH) {
             return new int[]{MOVES_UP, MOVES_DOWN};
         }
@@ -81,12 +81,12 @@ public class Switch extends Block {
     public void setOpenSwitch() {
         this.status = OPEN_SWITCH;
         this.setBlockType(getBlockChar(OPEN_SWITCH, type));
-        this.setActionWhenPlayerTouch(Block.END_GAME);
+        this.setActionWhenPlayerTouch(Block.PASSOVER);
     }
 
     public void setClosedSwitch() {
         this.status = CLOSED_SWITCH;
         this.setBlockType(getBlockChar(CLOSED_SWITCH, type));
-        this.setActionWhenPlayerTouch(Block.PASSOVER);
+        this.setActionWhenPlayerTouch(Block.END_GAME);
     }
 }

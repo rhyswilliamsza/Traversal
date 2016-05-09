@@ -5,6 +5,8 @@
  */
 public class Traversal {
     public static void main(String[] args) {
+
+        //new Game.GraphicMode("D:\\Data\\Projects\\Intellij\\Traversal\\testboard.txt");
         if (args.length == 1) {
             new Game.GraphicMode(args[0]);
         } else if (args.length == 2) {

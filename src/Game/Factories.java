@@ -53,11 +53,11 @@ public class Factories {
             case "H": {
                 return new Switch(Switch.OPEN_SWITCH, Switch.HORIZONTAL_SWITCH);
             }
-            case "v": {
-                return new Switch(Switch.CLOSED_SWITCH, Switch.VERTICAL_SWITCH);
-            }
             case "V": {
                 return new Switch(Switch.OPEN_SWITCH, Switch.VERTICAL_SWITCH);
+            }
+            case "v": {
+                return new Switch(Switch.CLOSED_SWITCH, Switch.VERTICAL_SWITCH);
             }
             case "k":
             case "K": {
