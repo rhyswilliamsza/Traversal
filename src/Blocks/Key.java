@@ -15,7 +15,7 @@ public class Key extends Block {
     }
 
     @Override
-    public boolean getAvailable () {
+    public boolean getAvailable() {
         if (available == AVAILABLE) {
             return true;
         } else {
@@ -24,7 +24,7 @@ public class Key extends Block {
     }
 
     @Override
-    public void playerTouched () {
+    public void playerTouched() {
         available = UNAVAILABLE;
         this.setBlockType("K");
     }

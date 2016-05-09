@@ -98,7 +98,7 @@ public class Block {
         return icon;
     }
 
-    public boolean getAvailable () {
+    public boolean getAvailable() {
         return this.available;
     }
 

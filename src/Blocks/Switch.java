@@ -55,7 +55,7 @@ public class Switch extends Block {
         return null;
     }
 
-    private static int getActionWhenPlayerTouch (int status) {
+    private static int getActionWhenPlayerTouch(int status) {
         if (status == OPEN_SWITCH) {
             return Block.PASSOVER;
         }

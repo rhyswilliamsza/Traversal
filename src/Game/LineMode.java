@@ -18,7 +18,11 @@ public class LineMode extends Core {
         try {
             Scanner moveScan = new Scanner(new File(moves)).useDelimiter("");
             while (moveScan.hasNext()) {
-                requestMove(moveScan.next());
+                String move = moveScan.next();
+                if (move.equals("x")) {
+                    outputAndExit("");
+                }
+                requestMove(move, LINEMODE);
             }
             moveScan.close();
             outputAndExit("");
@@ -32,8 +36,6 @@ public class LineMode extends Core {
         if (!optionalMessage.isEmpty()) {
             System.out.println(optionalMessage);
         }
-//        System.out.println(boardTitle);
-//        System.out.println(board.length + " " + board[0].length);
         for (int yPos = 0; yPos < board.length; yPos++) {
             for (int xPos = 0; xPos < board[yPos].length; xPos++) {
                 ArrayList<Block> currentCell = board[yPos][xPos];
@@ -78,5 +80,6 @@ public class LineMode extends Core {
             }
             System.out.println();
         }
+        exit();
     }
 }

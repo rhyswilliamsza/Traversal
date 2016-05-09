@@ -14,6 +14,8 @@ import java.util.Scanner;
  * me@rhyswilliams.co.za
  */
 public class Core {
+    public static final int GRAPHICMODE = 0;
+    public static final int LINEMODE = 1;
     protected ArrayList<Block>[][] board;
     protected String boardTitle;
 
@@ -54,7 +56,7 @@ public class Core {
         }
     }
 
-    public void requestMove(String key) {
+    public void requestMove(String key, int mode) {
         switch (key) {
             case "h":
                 moveRequest(Block.MOVES_LEFT);
@@ -68,9 +70,11 @@ public class Core {
             case "k":
                 moveRequest(Block.MOVES_UP);
                 break;
-            case "q":
-                exit();
-                break;
+            case "q": {
+                if (mode == GRAPHICMODE) {
+                    exit();
+                }
+            }
         }
     }
 
@@ -232,7 +236,7 @@ public class Core {
     }
 
 
-    private void exit() {
+    public void exit() {
         System.exit(0);
     }
 }

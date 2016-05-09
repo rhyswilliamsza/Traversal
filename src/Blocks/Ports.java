@@ -36,7 +36,7 @@ public class Ports extends Block {
     }
 
     @Override
-    public void changeRequested () {
+    public void changeRequested() {
         if (status == OPEN) {
             setCLOSED();
         } else if (status == CLOSED) {
