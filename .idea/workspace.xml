@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f774b2f-f66e-4d81-a123-a64f9615a198" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/testBoard.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Block.java" afterPath="$PROJECT_DIR$/src/Blocks/Block.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Key.java" afterPath="$PROJECT_DIR$/src/Blocks/Key.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Ports.java" afterPath="$PROJECT_DIR$/src/Blocks/Ports.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Switch.java" afterPath="$PROJECT_DIR$/src/Blocks/Switch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Core.java" afterPath="$PROJECT_DIR$/src/Game/Core.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GraphicMode.java" afterPath="$PROJECT_DIR$/src/Game/GraphicMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/LineMode.java" afterPath="$PROJECT_DIR$/src/Game/LineMode.java" />
     </list>
     <ignored path="Traversal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -827,7 +821,7 @@
       <workItem from="1462625098280" duration="11563000" />
       <workItem from="1462692253296" duration="9566000" />
       <workItem from="1462742392875" duration="793000" />
-      <workItem from="1462791802797" duration="15740000" />
+      <workItem from="1462791802797" duration="15783000" />
     </task>
     <task id="LOCAL-00001" summary="Modulised">
       <created>1459325486981</created>
@@ -871,15 +865,21 @@
       <option name="project" value="LOCAL" />
       <updated>1462806766337</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed small bugs">
+      <created>1462807562496</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1462807562496</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81874000" />
+    <option name="totallyTimeSpent" value="81917000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -891,7 +891,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28328982" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767624" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -925,7 +925,8 @@
     <MESSAGE value="Successfully Fixed Movers and Player Moving" />
     <MESSAGE value="Added Switch" />
     <MESSAGE value="Finished all Pieces&#10;Started coding line mode!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished all Pieces&#10;Started coding line mode!" />
+    <MESSAGE value="Fixed small bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed small bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -955,13 +956,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testBoard.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1011,13 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testBoard.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1339,14 +1326,6 @@
             <element signature="method#setOpenSwitch#0;class#Switch#0" expanded="false" />
             <element signature="method#setClosedSwitch#0;class#Switch#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testBoard.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13051823">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
