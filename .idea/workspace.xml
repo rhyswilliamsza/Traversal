@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f774b2f-f66e-4d81-a123-a64f9615a198" name="Default" comment="Removed excess files">
+    <list default="true" id="1f774b2f-f66e-4d81-a123-a64f9615a198" name="Default" comment="Fixed output messages">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Key.java" afterPath="$PROJECT_DIR$/src/Blocks/Key.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Player.java" afterPath="$PROJECT_DIR$/src/Blocks/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Core.java" afterPath="$PROJECT_DIR$/src/Game/Core.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GraphicMode.java" afterPath="$PROJECT_DIR$/src/Game/GraphicMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/LineMode.java" afterPath="$PROJECT_DIR$/src/Game/LineMode.java" />
     </list>
     <ignored path="Traversal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Core.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Core.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/Core.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="247" column="40" selection-start-line="247" selection-start-column="40" selection-end-line="247" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.41266796">
+              <caret line="213" column="43" selection-start-line="213" selection-start-column="43" selection-end-line="213" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#GenerateBoard#0;class#Core#0" expanded="false" />
@@ -144,11 +140,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphicMode.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GraphicMode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/GraphicMode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5220729">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#861#862#0" expanded="true" />
@@ -162,10 +158,8 @@
         <entry file="file://$PROJECT_DIR$/src/Game/LineMode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -231,9 +225,9 @@
         <option value="$PROJECT_DIR$/src/Blocks/Key.java" />
         <option value="$PROJECT_DIR$/src/testBoard.txt" />
         <option value="$PROJECT_DIR$/src/Traversal.java" />
-        <option value="$PROJECT_DIR$/src/Game/Core.java" />
         <option value="$PROJECT_DIR$/src/Game/LineMode.java" />
         <option value="$PROJECT_DIR$/src/Game/GraphicMode.java" />
+        <option value="$PROJECT_DIR$/src/Game/Core.java" />
       </list>
     </option>
   </component>
@@ -843,7 +837,7 @@
       <workItem from="1462625098280" duration="11563000" />
       <workItem from="1462692253296" duration="9566000" />
       <workItem from="1462742392875" duration="793000" />
-      <workItem from="1462791802797" duration="17427000" />
+      <workItem from="1462791802797" duration="17641000" />
     </task>
     <task id="LOCAL-00001" summary="Modulised">
       <created>1459325486981</created>
@@ -899,11 +893,17 @@
       <option name="project" value="LOCAL" />
       <updated>1462807608300</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed output messages">
+      <created>1462816832220</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1462816832220</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83561000" />
+    <option name="totallyTimeSpent" value="83775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
@@ -955,7 +955,8 @@
     <MESSAGE value="Finished all Pieces&#10;Started coding line mode!" />
     <MESSAGE value="Fixed small bugs" />
     <MESSAGE value="Removed excess files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed excess files" />
+    <MESSAGE value="Fixed output messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed output messages" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1302,27 +1303,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="101" column="30" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
-          <folding>
-            <element signature="method#Block#0;class#Block#0" expanded="false" />
-            <element signature="method#setActionWhenPlayerTouch#0;class#Block#0" expanded="false" />
-            <element signature="method#getIcon#0;class#Block#0" expanded="false" />
-            <element signature="e#2856#2857#0" expanded="true" />
-            <element signature="e#2893#2894#0" expanded="true" />
-            <element signature="method#checkIfTriggered#0;class#Block#0" expanded="false" />
-            <element signature="method#moveMade#0;class#Block#0" expanded="false" />
-            <element signature="method#playerTouched#0;class#Block#0" expanded="false" />
-            <element signature="method#getMovesUp#0;class#Block#0" expanded="false" />
-            <element signature="method#getMovesDown#0;class#Block#0" expanded="false" />
-            <element signature="method#getMovesRight#0;class#Block#0" expanded="false" />
-            <element signature="method#getMovesLeft#0;class#Block#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Factories.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1379,6 +1359,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/LineMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/GraphicMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="30" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
+          <folding>
+            <element signature="method#Block#0;class#Block#0" expanded="false" />
+            <element signature="method#setActionWhenPlayerTouch#0;class#Block#0" expanded="false" />
+            <element signature="method#getIcon#0;class#Block#0" expanded="false" />
+            <element signature="e#2856#2857#0" expanded="true" />
+            <element signature="e#2893#2894#0" expanded="true" />
+            <element signature="method#checkIfTriggered#0;class#Block#0" expanded="false" />
+            <element signature="method#moveMade#0;class#Block#0" expanded="false" />
+            <element signature="method#playerTouched#0;class#Block#0" expanded="false" />
+            <element signature="method#getMovesUp#0;class#Block#0" expanded="false" />
+            <element signature="method#getMovesDown#0;class#Block#0" expanded="false" />
+            <element signature="method#getMovesRight#0;class#Block#0" expanded="false" />
+            <element signature="method#getMovesLeft#0;class#Block#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Traversal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1389,35 +1410,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Core.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="247" column="40" selection-start-line="247" selection-start-column="40" selection-end-line="247" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.41266796">
+          <caret line="213" column="43" selection-start-line="213" selection-start-column="43" selection-end-line="213" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#GenerateBoard#0;class#Core#0" expanded="false" />
             <element signature="method#doMove#0;class#Core#0" expanded="false" />
             <element signature="method#resetJustMovedStatus#0;class#Core#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/LineMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/GraphicMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5220729">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
           </folding>
         </state>
       </provider>

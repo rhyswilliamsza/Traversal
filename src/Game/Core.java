@@ -211,11 +211,11 @@ public class Core {
             }
 
             if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getActionWhenPlayerTouch() == Block.WIN_GAME) {
-                System.out.println("YOU WON!");
+                System.out.println("You won!");
             }
 
             if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getActionWhenPlayerTouch() == Block.END_GAME) {
-                outputAndExit("YOU LOSE!");
+                outputAndExit("You lost!");
             }
 
             //Let the block know that the player has touched the block.
