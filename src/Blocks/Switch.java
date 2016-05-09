@@ -15,7 +15,7 @@ public class Switch extends Block {
     int status;
 
     public Switch(int status, int type) {
-        super(getBlockChar(status, type), getMoveTrigger(type), new int[]{}, PASSOVER);
+        super(getBlockChar(status, type), getMoveTrigger(type), new int[]{}, getActionWhenPlayerTouch(status));
         this.type = type;
         this.status = status;
     }
@@ -55,9 +55,21 @@ public class Switch extends Block {
         return null;
     }
 
+    private static int getActionWhenPlayerTouch (int status) {
+        if (status == OPEN_SWITCH) {
+            return Block.PASSOVER;
+        }
+
+        if (status == CLOSED_SWITCH) {
+            return Block.END_GAME;
+        }
+
+        return PASSOVER;
+    }
+
     @Override
     public void moveMade(int triggerKey) {
-        if (checkIfReact(triggerKey)) {
+        if (checkIfTriggered(triggerKey)) {
             if (status == OPEN_SWITCH) {
                 setClosedSwitch();
             } else if (status == CLOSED_SWITCH) {

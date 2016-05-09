@@ -28,6 +28,8 @@ public class GraphicMode extends Core {
         gameFrame.addKeyListener(listener);
         gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         gameFrame.setResizable(false);
+        gameFrame.pack();
+        gameFrame.setLocationRelativeTo(null);
     }
 
     private void generateGamePanel() {
@@ -43,7 +45,7 @@ public class GraphicMode extends Core {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                moveRequested("" + e.getKeyChar());
+                requestMove("" + e.getKeyChar());
                 draw();
             }
 

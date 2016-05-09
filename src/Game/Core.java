@@ -54,77 +54,74 @@ public class Core {
         }
     }
 
-    public void printBoard() {
-        System.out.println(boardTitle);
-        System.out.println(board.length + " " + board[0].length);
-        for (int yPos = 0; yPos < board.length; yPos++) {
-            System.out.println();
-            for (int xPos = 0; xPos < board[yPos].length; xPos++) {
-                ArrayList<Block> currentCell = board[yPos][xPos];
-                System.out.print(board[yPos][xPos].get(currentCell.size() - 1).getBlockType());
-            }
-        }
-    }
-
-    public void moveRequested(String key) {
+    public void requestMove(String key) {
         switch (key) {
             case "h":
-                requestMove(Block.MOVES_LEFT);
+                moveRequest(Block.MOVES_LEFT);
                 break;
             case "l":
-                requestMove(Block.MOVES_RIGHT);
+                moveRequest(Block.MOVES_RIGHT);
                 break;
             case "j":
-                requestMove(Block.MOVES_DOWN);
+                moveRequest(Block.MOVES_DOWN);
                 break;
             case "k":
-                requestMove(Block.MOVES_UP);
+                moveRequest(Block.MOVES_UP);
                 break;
-            case "x":
+            case "q":
                 exit();
                 break;
         }
     }
 
-    private void requestMove(int triggerKey) {
+    private void moveRequest(int triggerKey) {
         for (int yPos = 0; yPos < board.length; yPos++) {
             for (int xPos = 0; xPos < board[yPos].length; xPos++) {
                 for (int zPos = board[yPos][xPos].size() - 1; zPos >= 0; zPos--) {
                     Block currentBlock = board[yPos][xPos].get(zPos);
-                    if (!currentBlock.hasJustMoved()) {
+                    if (!currentBlock.getJustMoved()) {
 
-                        //Let block know that a move was made
+                        //Let block know that a move of triggerKey was made
                         board[yPos][xPos].get(zPos).moveMade(triggerKey);
 
-                        if (currentBlock.movesUp(triggerKey)) {
-                            makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos - 1, xPos});
+                        //Check which move was made and run the doMove method
+                        if (currentBlock.getMovesUp(triggerKey)) {
+                            doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos - 1, xPos});
+                            justMoved();
                         }
-                        if (currentBlock.movesDown(triggerKey)) {
-                            makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos + 1, xPos});
+                        if (currentBlock.getMovesDown(triggerKey)) {
+                            doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos + 1, xPos});
+                            justMoved();
                         }
-                        if (currentBlock.movesLeft(triggerKey)) {
-                            makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos - 1});
+                        if (currentBlock.getMovesLeft(triggerKey)) {
+                            doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos - 1});
+                            justMoved();
                         }
-                        if (currentBlock.movesRight(triggerKey)) {
-                            makeMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos + 1});
+                        if (currentBlock.getMovesRight(triggerKey)) {
+                            doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos + 1});
+                            justMoved();
                         }
                     }
                 }
             }
         }
-        //Run after every move requested
+        //Reset the just moved status after processing has completed.
         resetJustMovedStatus();
     }
 
-    private void makeMove(int[] source, int[] target) {
+    private void doMove(int[] source, int[] target) {
+        //Get the source block co-ords
         int sourceY = source[0];
         int sourceX = source[1];
         int sourceZ = source[2];
 
+        //Get the target block co-ords
         int targetY = target[0];
         int targetX = target[1];
 
-        if (!board[sourceY][sourceX].get(sourceZ).hasJustMoved()) {
+        //Check if the block has just moved
+        if (!board[sourceY][sourceX].get(sourceZ).getJustMoved()) {
+
             //Create new block object from object in original cell
             Block sourceBlock = board[sourceY][sourceX].get(sourceZ);
             sourceBlock.setJustMoved(true);
@@ -167,13 +164,10 @@ public class Core {
             //Remove block from source
             board[sourceY][sourceX].remove(sourceZ);
 
-            //If there are no blocks in the old cell, create an empty block.
+            //If there are no blocks in the source cell, create an empty block.
             if (board[sourceY][sourceX].size() == 0) {
                 board[sourceY][sourceX].add(Factories.makeBlock("."));
             }
-
-            //Run methods if move was made
-            checkRules();
         }
     }
 
@@ -187,25 +181,49 @@ public class Core {
         }
     }
 
-    private void checkRules() {
-        ArrayList<Block> cell = findPlayerCell();
-        for (int i = 0; i < cell.size(); i++) {
-            if (cell.get(i).getActionWhenPlayerTouch() == Block.WIN_GAME) {
+    private void justMoved() {
+
+        /**
+         * Do actions for the player cell.
+         * Check for loss/win and informs blocks in the same cell that the player has moved onto them.
+         */
+        int[] playerCellCoords = findPlayerCellCoords();
+        for (int i = 0; i < board[playerCellCoords[0]][playerCellCoords[1]].size(); i++) {
+
+            if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getBlockType().toLowerCase().equals("k")) {
+                if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getAvailable()) {
+                    for (int yPos = 0; yPos < board.length; yPos++) {
+                        for (int xPos = 0; xPos < board[yPos].length; xPos++) {
+                            for (int zPos = board[yPos][xPos].size() - 1; zPos >= 0; zPos--) {
+                                if (board[yPos][xPos].get(i).getBlockType().toLowerCase().equals("p")) {
+                                    board[yPos][xPos].get(i).changeRequested();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getActionWhenPlayerTouch() == Block.WIN_GAME) {
                 System.out.println("YOU WON!");
             }
 
-            if (cell.get(i).getActionWhenPlayerTouch() == Block.END_GAME) {
+            if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getActionWhenPlayerTouch() == Block.END_GAME) {
                 System.out.println("YOU LOSE!");
+                exit();
             }
+
+            //Let the block know that the player has touched the block.
+            board[playerCellCoords[0]][playerCellCoords[1]].get(i).playerTouched();
         }
     }
 
-    private ArrayList<Block> findPlayerCell() {
+    private int[] findPlayerCellCoords() {
         for (int yPos = 0; yPos < board.length; yPos++) {
             for (int xPos = 0; xPos < board[yPos].length; xPos++) {
                 for (int zPos = board[yPos][xPos].size() - 1; zPos >= 0; zPos--) {
                     if (board[yPos][xPos].get(zPos).getBlockType().toLowerCase().equals("s")) {
-                        return board[yPos][xPos];
+                        return new int[]{yPos, xPos};
                     }
                 }
             }

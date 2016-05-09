@@ -8,8 +8,24 @@ package Blocks;
 public class Key extends Block {
     public static int AVAILABLE = 0;
     public static int UNAVAILABLE = 1;
+    int available = AVAILABLE;
 
     public Key() {
         super("k", new int[]{}, new int[]{}, PASSOVER);
+    }
+
+    @Override
+    public boolean getAvailable () {
+        if (available == AVAILABLE) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public void playerTouched () {
+        available = UNAVAILABLE;
+        this.setBlockType("K");
     }
 }

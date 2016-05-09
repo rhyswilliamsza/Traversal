@@ -13,7 +13,7 @@ public class Block {
     public final static int END_GAME = 1;
     public final static int WIN_GAME = 2;
 
-    //Static moveDirection and moveTrigger Variables
+    //Static moveDirection and blockTrigger Variables
     public final static int MOVES_UP = 0;
     public final static int MOVES_RIGHT = 1;
     public final static int MOVES_DOWN = 2;
@@ -21,8 +21,9 @@ public class Block {
 
     //Variables used by the class
     protected int moveDirection[];
-    protected int moveTrigger[];
+    protected int blockTrigger[];
     protected int actionWhenPlayerTouch;
+    protected boolean available;
     protected JLabel icon;
     protected String blockType;
     protected boolean justMoved = false;
@@ -31,27 +32,24 @@ public class Block {
 
     /**
      * @param blockType
-     * @param moveTrigger
+     * @param blockTrigger
      * @param moveDirection
      * @param actionWhenPlayerTouch
      */
-    public Block(String blockType, int[] moveTrigger, int[] moveDirection, int actionWhenPlayerTouch) {
+    public Block(String blockType, int[] blockTrigger, int[] moveDirection, int actionWhenPlayerTouch) {
         //Assign params to variables
         this.blockType = blockType;
         this.actionWhenPlayerTouch = actionWhenPlayerTouch;
-        this.moveTrigger = moveTrigger;
+        this.blockTrigger = blockTrigger;
         this.moveDirection = moveDirection;
+    }
 
-        //Generate Icon
-        generateIcon();
+    public boolean getJustMoved() {
+        return this.justMoved;
     }
 
     public void setJustMoved(boolean justMoved) {
         this.justMoved = justMoved;
-    }
-
-    public boolean hasJustMoved() {
-        return this.justMoved;
     }
 
     public boolean canWrapX() {
@@ -86,7 +84,7 @@ public class Block {
         this.actionWhenPlayerTouch = actionWhenPlayerTouch;
     }
 
-    private void generateIcon() {
+    public JLabel getIcon() {
         icon = new JLabel();
         try {
             if (blockType.toLowerCase().equals(blockType)) {
@@ -97,24 +95,47 @@ public class Block {
         } catch (Exception e) {
             System.out.println("The image file for " + blockType + " is missing.");
         }
-    }
-
-    public JLabel getIcon() {
-        generateIcon();
         return icon;
     }
 
-    protected boolean checkIfReact(int triggerKey) {
-        for (int i = 0; i < moveTrigger.length; i++) {
-            if (moveTrigger[i] == triggerKey) {
+    public boolean getAvailable () {
+        return this.available;
+    }
+
+    protected boolean checkIfTriggered(int triggerKey) {
+        for (int i = 0; i < blockTrigger.length; i++) {
+            if (blockTrigger[i] == triggerKey) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean movesUp(int triggerKey) {
-        if (checkIfReact(triggerKey)) {
+    /**
+     * Override this method for use by a child.
+     *
+     * @param move
+     */
+    public void moveMade(int move) {
+        //Overwrite this method in children for action
+    }
+
+    /**
+     * Override this method for use by a child.
+     */
+    public void playerTouched() {
+        //Overwrite this method in children for action
+    }
+
+    /**
+     * Override this method for use by a child.
+     */
+    public void changeRequested() {
+        //Overwrite this method in children for action
+    }
+
+    public boolean getMovesUp(int triggerKey) {
+        if (checkIfTriggered(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_UP) {
                     return true;
@@ -124,12 +145,8 @@ public class Block {
         return false;
     }
 
-    public void moveMade(int move) {
-        //Overwrite this method in children for action
-    }
-
-    public boolean movesDown(int triggerKey) {
-        if (checkIfReact(triggerKey)) {
+    public boolean getMovesDown(int triggerKey) {
+        if (checkIfTriggered(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_DOWN) {
                     return true;
@@ -139,8 +156,8 @@ public class Block {
         return false;
     }
 
-    public boolean movesRight(int triggerKey) {
-        if (checkIfReact(triggerKey)) {
+    public boolean getMovesRight(int triggerKey) {
+        if (checkIfTriggered(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_RIGHT) {
                     return true;
@@ -150,8 +167,8 @@ public class Block {
         return false;
     }
 
-    public boolean movesLeft(int triggerKey) {
-        if (checkIfReact(triggerKey)) {
+    public boolean getMovesLeft(int triggerKey) {
+        if (checkIfTriggered(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_LEFT) {
                     return true;

@@ -11,28 +11,28 @@ public class Player extends Block {
         this.setCanWrapY(true);
     }
 
-    public boolean movesUp(int triggerKey) {
+    public boolean getMovesUp(int triggerKey) {
         if (triggerKey == MOVES_UP) {
             return true;
         }
         return false;
     }
 
-    public boolean movesDown(int triggerKey) {
+    public boolean getMovesDown(int triggerKey) {
         if (triggerKey == MOVES_DOWN) {
             return true;
         }
         return false;
     }
 
-    public boolean movesRight(int triggerKey) {
+    public boolean getMovesRight(int triggerKey) {
         if (triggerKey == MOVES_RIGHT) {
             return true;
         }
         return false;
     }
 
-    public boolean movesLeft(int triggerKey) {
+    public boolean getMovesLeft(int triggerKey) {
         if (triggerKey == MOVES_LEFT) {
             return true;
         }
