@@ -16,7 +16,7 @@ public class GraphicMode extends Core {
     KeyListener listener;
 
     public GraphicMode(String path) {
-        super(path);
+        super(path, GRAPHICMODE);
         generateKeyListener();
         generateFrame();
         generateGamePanel();
@@ -45,7 +45,7 @@ public class GraphicMode extends Core {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                requestMove("" + e.getKeyChar(), GRAPHICMODE);
+                requestMove("" + e.getKeyChar());
                 draw();
             }
 

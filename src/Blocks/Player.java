@@ -12,30 +12,18 @@ public class Player extends Block {
     }
 
     public boolean getMovesUp(int triggerKey) {
-        if (triggerKey == MOVES_UP) {
-            return true;
-        }
-        return false;
+        return triggerKey == MOVES_UP;
     }
 
     public boolean getMovesDown(int triggerKey) {
-        if (triggerKey == MOVES_DOWN) {
-            return true;
-        }
-        return false;
+        return triggerKey == MOVES_DOWN;
     }
 
     public boolean getMovesRight(int triggerKey) {
-        if (triggerKey == MOVES_RIGHT) {
-            return true;
-        }
-        return false;
+        return triggerKey == MOVES_RIGHT;
     }
 
     public boolean getMovesLeft(int triggerKey) {
-        if (triggerKey == MOVES_LEFT) {
-            return true;
-        }
-        return false;
+        return triggerKey == MOVES_LEFT;
     }
 }

@@ -16,11 +16,13 @@ import java.util.Scanner;
 public class Core {
     public static final int GRAPHICMODE = 0;
     public static final int LINEMODE = 1;
+    public int mode;
     protected ArrayList<Block>[][] board;
     protected String boardTitle;
 
-    public Core(String boardPath) {
+    public Core(String boardPath, int mode) {
         GenerateBoard(boardPath);
+        this.mode = mode;
     }
 
     /**
@@ -56,7 +58,7 @@ public class Core {
         }
     }
 
-    public void requestMove(String key, int mode) {
+    public void requestMove(String key) {
         switch (key) {
             case "h":
                 moveRequest(Block.MOVES_LEFT);
@@ -72,7 +74,7 @@ public class Core {
                 break;
             case "q": {
                 if (mode == GRAPHICMODE) {
-                    exit();
+                    outputAndExit("");
                 }
             }
         }
@@ -213,8 +215,7 @@ public class Core {
             }
 
             if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getActionWhenPlayerTouch() == Block.END_GAME) {
-                System.out.println("YOU LOSE!");
-                exit();
+                outputAndExit("YOU LOSE!");
             }
 
             //Let the block know that the player has touched the block.
@@ -235,8 +236,56 @@ public class Core {
         return null;
     }
 
-
-    public void exit() {
+    public void outputAndExit(String optionalMessage) {
+        if (!optionalMessage.isEmpty()) {
+            System.out.println(optionalMessage);
+        }
+        if (mode == LINEMODE) {
+            for (int yPos = 0; yPos < board.length; yPos++) {
+                for (int xPos = 0; xPos < board[yPos].length; xPos++) {
+                    ArrayList<Block> currentCell = board[yPos][xPos];
+                    String currBlock = board[yPos][xPos].get(currentCell.size() - 1).getBlockType();
+                    switch (currBlock) {
+                        case "T":
+                        case "t":
+                            currBlock = "t";
+                            break;
+                        case "X":
+                        case "x":
+                            currBlock = "x";
+                            break;
+                        case "K":
+                        case "k":
+                            currBlock = "k";
+                            break;
+                        case "H":
+                        case "V":
+                            currBlock = "S";
+                            break;
+                        case "h":
+                        case "v":
+                            currBlock = "s";
+                            break;
+                        case "u":
+                        case "d":
+                        case "l":
+                        case "r":
+                        case "U":
+                        case "D":
+                        case "L":
+                        case "R":
+                            currBlock = "m";
+                            break;
+                        case "S":
+                        case "s":
+                            currBlock = "Y";
+                            break;
+                    }
+                    System.out.print(currBlock);
+                }
+                System.out.println();
+            }
+        }
         System.exit(0);
     }
 }

@@ -16,11 +16,7 @@ public class Key extends Block {
 
     @Override
     public boolean getAvailable() {
-        if (available == AVAILABLE) {
-            return true;
-        } else {
-            return false;
-        }
+        return available == AVAILABLE;
     }
 
     @Override
