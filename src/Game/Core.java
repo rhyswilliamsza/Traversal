@@ -14,11 +14,14 @@ import java.util.Scanner;
  * me@rhyswilliams.co.za
  */
 public class Core {
+    //Static mode Variables
     public static final int GRAPHICMODE = 0;
     public static final int LINEMODE = 1;
-    public int mode;
+
+    //Set global variables
     protected ArrayList<Block>[][] board;
     protected String boardTitle;
+    protected int mode;
 
     /**
      * Instantiate the core class
@@ -180,14 +183,14 @@ public class Core {
 
             //Check if block needs to wrap around X.
             if (targetX < 0) {
-                if (sourceBlock.canWrapX()) {
+                if (sourceBlock.getCanWrapX()) {
                     targetX = board[sourceY].length - 1;
                 } else {
                     targetX = sourceX;
                 }
             }
             if (targetX >= board[sourceY].length) {
-                if (sourceBlock.canWrapX()) {
+                if (sourceBlock.getCanWrapX()) {
                     targetX = 0;
                 } else {
                     targetX = sourceX;
@@ -196,14 +199,14 @@ public class Core {
 
             //Check if block needs to wrap around Y
             if (targetY < 0) {
-                if (sourceBlock.canWrapY()) {
+                if (sourceBlock.getCanWrapY()) {
                     targetY = board.length - 1;
                 } else {
                     targetY = sourceY;
                 }
             }
             if (targetY >= board.length) {
-                if (sourceBlock.canWrapY()) {
+                if (sourceBlock.getCanWrapY()) {
                     targetY = 0;
                 } else {
                     targetY = sourceY;
@@ -253,7 +256,7 @@ public class Core {
 
             //Check if the player has moved onto a key
             if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getBlockType().toLowerCase().equals("k")) {
-                if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getAvailable()) {
+                if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getEnabled()) {
                     for (int yPos = 0; yPos < board.length; yPos++) {
                         for (int xPos = 0; xPos < board[yPos].length; xPos++) {
                             for (int zPos = board[yPos][xPos].size() - 1; zPos >= 0; zPos--) {

@@ -6,22 +6,20 @@ package Blocks;
  * me@rhyswilliams.co.za
  */
 public class Key extends Block {
-    public static int AVAILABLE = 0;
-    public static int UNAVAILABLE = 1;
-    int available = AVAILABLE;
 
     public Key() {
         super("k", new int[]{}, new int[]{}, PASSOVER);
+        setEnabled(true);
     }
 
     @Override
-    public boolean getAvailable() {
-        return available == AVAILABLE;
+    public boolean getEnabled() {
+        return enabled;
     }
 
     @Override
     public void playerTouched() {
-        available = UNAVAILABLE;
+        setEnabled(false);
         this.setBlockType("K");
     }
 }

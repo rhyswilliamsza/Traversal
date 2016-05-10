@@ -24,9 +24,9 @@ public class Block {
     protected int moveDirection[];
     protected int blockTrigger[];
     protected int actionWhenPlayerTouch;
-    protected boolean available;
     protected JLabel icon;
     protected String blockType;
+    protected boolean enabled = true;
     protected boolean justMoved = false;
     protected boolean canWrapX = false;
     protected boolean canWrapY = false;
@@ -48,7 +48,7 @@ public class Block {
     }
 
     /**
-     * Get if the block has just moved
+     * Get the just moved status
      *
      * @return justMoved boolean
      */
@@ -70,17 +70,8 @@ public class Block {
      *
      * @return boolean
      */
-    public boolean canWrapX() {
+    public boolean getCanWrapX() {
         return canWrapX;
-    }
-
-    /**
-     * Check if the block can wrap around Y
-     *
-     * @return boolean
-     */
-    public boolean canWrapY() {
-        return canWrapY;
     }
 
     /**
@@ -90,6 +81,15 @@ public class Block {
      */
     public void setCanWrapX(boolean canWrapX) {
         this.canWrapX = canWrapX;
+    }
+
+    /**
+     * Check if the block can wrap around Y
+     *
+     * @return boolean
+     */
+    public boolean getCanWrapY() {
+        return canWrapY;
     }
 
     /**
@@ -157,12 +157,21 @@ public class Block {
     }
 
     /**
-     * Check if the block is available
+     * Check if the block is enabled
      *
-     * @return
+     * @return boolean of enabled status
      */
-    public boolean getAvailable() {
-        return this.available;
+    public boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * Set if the block is enabled
+     *
+     * @param enabled boolean of enabled status
+     */
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     /**
