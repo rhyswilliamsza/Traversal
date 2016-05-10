@@ -73,20 +73,21 @@ public class Core {
      * @param key A letter from the keyboard
      */
     public void requestMove(String key) {
-        switch (key) {
-            case "h":
+        char keyChar = key.charAt(0);
+        switch (keyChar) {
+            case 'h':
                 manageMove(Block.MOVES_LEFT);
                 break;
-            case "l":
+            case 'l':
                 manageMove(Block.MOVES_RIGHT);
                 break;
-            case "j":
+            case 'j':
                 manageMove(Block.MOVES_DOWN);
                 break;
-            case "k":
+            case 'k':
                 manageMove(Block.MOVES_UP);
                 break;
-            case "q": {
+            case 'q': {
                 if (mode == GRAPHICMODE) {
                     outputAndExit("");
                 }
