@@ -4,9 +4,14 @@
  * me@rhyswilliams.co.za
  */
 public class Traversal {
+    /**
+     * Main Method launches the app:
+     * Graphic Mode if one argument is supplied,
+     * Line Mode if two are supplied.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-
-        //todo Remove excess test code
         new Game.GraphicMode("D:\\Data\\Projects\\Intellij\\Traversal\\testboard.txt");
 //        if (args.length == 1) {
 //            new Game.GraphicMode(args[0]);

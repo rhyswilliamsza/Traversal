@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-//todo Add comments to everything
-
 /**
  * This file was created by Rhys Williams,
  * www.rhyswilliams.co.za
@@ -22,6 +20,12 @@ public class Core {
     protected ArrayList<Block>[][] board;
     protected String boardTitle;
 
+    /**
+     * Instantiate the core class
+     *
+     * @param boardPath Path to the board file
+     * @param mode      Mode: GRAPHICMODE or LINEMODE
+     */
     public Core(String boardPath, int mode) {
         GenerateBoard(boardPath);
         this.mode = mode;
@@ -60,6 +64,11 @@ public class Core {
         }
     }
 
+    /**
+     * Request a move using the parametrized key
+     *
+     * @param key A letter from the keyboard
+     */
     public void requestMove(String key) {
         switch (key) {
             case "h":
@@ -82,12 +91,17 @@ public class Core {
         }
     }
 
+    /**
+     * Lets each block object know that a move was requested.
+     * Perform block move if needed.
+     *
+     * @param triggerKey
+     */
     private void manageMove(int triggerKey) {
 
         boolean doesMove = true;
-        /**
-         * Check that the player is not going off the board left or right
-         */
+
+        //Check that the player is not going off the board left or right
         int coords[] = findPlayerCellCoords();
         int y = coords[0];
         int x = coords[1];
@@ -98,9 +112,8 @@ public class Core {
             doesMove = false;
         }
 
-        /**
-         * If the player is not going off left or right, do the move.
-         */
+
+        //If the player is not going off left or right, do the move.
         if (doesMove) {
             boolean moved = false;
             for (int yPos = 0; yPos < board.length; yPos++) {
@@ -109,7 +122,7 @@ public class Core {
                         Block currentBlock = board[yPos][xPos].get(zPos);
                         if (!currentBlock.getJustMoved()) {
 
-                            //Let block know that a move of triggerKey was made
+                            //Let each block know that a move of triggerKey was made
                             board[yPos][xPos].get(zPos).moveMade(triggerKey);
 
                             //Check which move was made and run the doMove method
@@ -134,14 +147,20 @@ public class Core {
                 }
             }
 
-            //Do actions if any pieces were moved
+            //Do actions if 'moved' is true
             if (moved) {
-                justMoved();
+                moveMade();
                 resetJustMovedStatus();
             }
         }
     }
 
+    /**
+     * Do block move, called by manageMove.
+     *
+     * @param source Coordinates of source block in int[]{y,x}
+     * @param target Coordinates of target block in int[]{y,x}
+     */
     private void doMove(int[] source, int[] target) {
         //Get the source block co-ords
         int sourceY = source[0];
@@ -204,6 +223,9 @@ public class Core {
         }
     }
 
+    /**
+     * Reset just moved status for all blocks.
+     */
     private void resetJustMovedStatus() {
         for (int yPos = 0; yPos < board.length; yPos++) {
             for (int xPos = 0; xPos < board[yPos].length; xPos++) {
@@ -214,15 +236,22 @@ public class Core {
         }
     }
 
-    private void justMoved() {
+    /**
+     * Rules to apply to blocks if a move has just been made.
+     */
+    private void moveMade() {
 
         /**
-         * Do actions for the player cell.
-         * Check for loss/win and informs blocks in the same cell that the player has moved onto them.
+         * Do actions for each block in the same cell as the player
+         * Informs blocks in the same cell that the player has moved onto them.
          */
+        //Get Player Cell
         int[] playerCellCoords = findPlayerCellCoords();
+
+        //Loop for all blocks in the same cell as the player
         for (int i = 0; i < board[playerCellCoords[0]][playerCellCoords[1]].size(); i++) {
 
+            //Check if the player has moved onto a key
             if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getBlockType().toLowerCase().equals("k")) {
                 if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getAvailable()) {
                     for (int yPos = 0; yPos < board.length; yPos++) {
@@ -237,19 +266,28 @@ public class Core {
                 }
             }
 
+
+            //Check if the player has touched a block to WIN_GAME
             if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getActionWhenPlayerTouch() == Block.WIN_GAME) {
                 outputAndExit("You won!");
             }
 
+            //Check if the player has touched a block to END_GAME
             if (board[playerCellCoords[0]][playerCellCoords[1]].get(i).getActionWhenPlayerTouch() == Block.END_GAME) {
                 outputAndExit("You lost!");
             }
 
-            //Let the block know that the player has touched the block.
+            //Let the block know that the player has touched it.
             board[playerCellCoords[0]][playerCellCoords[1]].get(i).playerTouched();
+
         }
     }
 
+    /**
+     * Return the coordinates of the player cell in the form int[]{y,x}
+     *
+     * @return int[]{y,x}
+     */
     private int[] findPlayerCellCoords() {
         for (int yPos = 0; yPos < board.length; yPos++) {
             for (int xPos = 0; xPos < board[yPos].length; xPos++) {
@@ -263,12 +301,16 @@ public class Core {
         return null;
     }
 
+    /**
+     * Output the optional message and exit the program.
+     * @param optionalMessage Add a message if you want it to appear on te top
+     */
     public void outputAndExit(String optionalMessage) {
         if (!optionalMessage.isEmpty()) {
             System.out.println(optionalMessage);
         }
 
-        //todo Work out 'invalid moves'
+        //If the program is in LINEMODE, output the board.
         if (mode == LINEMODE) {
             for (int yPos = 0; yPos < board.length; yPos++) {
                 for (int xPos = 0; xPos < board[yPos].length; xPos++) {

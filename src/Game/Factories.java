@@ -9,6 +9,12 @@ import Blocks.*;
  */
 public class Factories {
 
+    /**
+     * Return a block object using the blockCode, as provided in the instructions.
+     *
+     * @param blockCode Code of block, as provided in the instructions.
+     * @return The block object corresponding to the blockCode
+     */
     public static Block makeBlock(String blockCode) {
         switch (blockCode) {
             case "s":

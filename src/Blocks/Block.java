@@ -8,8 +8,6 @@ import javax.swing.*;
  * me@rhyswilliams.co.za
  */
 
-//todo Try simplify class
-
 public class Block {
     //Static actionWhenPlayerTouch Variables
     public final static int PASSOVER = 0;
@@ -34,10 +32,12 @@ public class Block {
     protected boolean canWrapY = false;
 
     /**
-     * @param blockType
-     * @param blockTrigger
-     * @param moveDirection
-     * @param actionWhenPlayerTouch
+     * Instantiate the block object
+     *
+     * @param blockType             Type of block, as specified in the instructions
+     * @param blockTrigger          Trigger array for when the block needs to react
+     * @param moveDirection         Direction array of movement, if any.
+     * @param actionWhenPlayerTouch Action performed when object is touched with player.
      */
     public Block(String blockType, int[] blockTrigger, int[] moveDirection, int actionWhenPlayerTouch) {
         //Assign params to variables
@@ -47,46 +47,101 @@ public class Block {
         this.moveDirection = moveDirection;
     }
 
+    /**
+     * Get if the block has just moved
+     *
+     * @return justMoved boolean
+     */
     public boolean getJustMoved() {
         return this.justMoved;
     }
 
+    /**
+     * Set the just moved status
+     *
+     * @param justMoved boolean of justMoved
+     */
     public void setJustMoved(boolean justMoved) {
         this.justMoved = justMoved;
     }
 
+    /**
+     * Check if the block can wrap around X
+     *
+     * @return boolean
+     */
     public boolean canWrapX() {
         return canWrapX;
     }
 
+    /**
+     * Check if the block can wrap around Y
+     *
+     * @return boolean
+     */
     public boolean canWrapY() {
         return canWrapY;
     }
 
+    /**
+     * Set wrap around X status
+     *
+     * @param canWrapX boolean
+     */
     public void setCanWrapX(boolean canWrapX) {
         this.canWrapX = canWrapX;
     }
 
+    /**
+     * Set wrap around Y status
+     *
+     * @param canWrapY boolean
+     */
     public void setCanWrapY(boolean canWrapY) {
         this.canWrapY = canWrapY;
     }
 
+    /**
+     * Get block type as String
+     *
+     * @return String of blockType, as stated in the instructions.
+     */
     public String getBlockType() {
         return blockType;
     }
 
+    /**
+     * Set block type of String
+     *
+     * @param blockType String of blockType, as stated in the instructions
+     */
     public void setBlockType(String blockType) {
         this.blockType = blockType;
     }
 
+    /**
+     * Return action of what happens when the player touches the block
+     *
+     * @return actionWhenPlayerTouch action
+     */
     public int getActionWhenPlayerTouch() {
         return actionWhenPlayerTouch;
     }
 
+    /**
+     * Set action of what happens when the player touches the block
+     *
+     * @param actionWhenPlayerTouch actionWhenPlayerTouch action
+     */
     public void setActionWhenPlayerTouch(int actionWhenPlayerTouch) {
         this.actionWhenPlayerTouch = actionWhenPlayerTouch;
     }
 
+    /**
+     * Get icon from Images and return as JLabel
+     *
+     * @return jLabel of Icon
+     */
     public JLabel getIcon() {
         icon = new JLabel();
         try {
@@ -101,11 +156,22 @@ public class Block {
         return icon;
     }
 
+    /**
+     * Check if the block is available
+     *
+     * @return
+     */
     public boolean getAvailable() {
         return this.available;
     }
 
-    protected boolean checkIfTriggered(int triggerKey) {
+    /**
+     * Check if block is triggered by the specified key
+     *
+     * @param triggerKey Trigger key
+     * @return boolean
+     */
+    protected boolean isTriggered(int triggerKey) {
         for (int i = 0; i < blockTrigger.length; i++) {
             if (blockTrigger[i] == triggerKey) {
                 return true;
@@ -137,8 +203,14 @@ public class Block {
         //Overwrite this method in children for action
     }
 
+    /**
+     * Get if the block moves up when the triggerKey is pressed
+     *
+     * @param triggerKey Trigger key
+     * @return boolean
+     */
     public boolean getMovesUp(int triggerKey) {
-        if (checkIfTriggered(triggerKey)) {
+        if (isTriggered(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_UP) {
                     return true;
@@ -148,8 +220,14 @@ public class Block {
         return false;
     }
 
+    /**
+     * Get if the block moves down when the triggerKey is pressed
+     *
+     * @param triggerKey Trigger key
+     * @return boolean
+     */
     public boolean getMovesDown(int triggerKey) {
-        if (checkIfTriggered(triggerKey)) {
+        if (isTriggered(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_DOWN) {
                     return true;
@@ -159,8 +237,14 @@ public class Block {
         return false;
     }
 
+    /**
+     * Get if the block moves right when the triggerKey is pressed
+     *
+     * @param triggerKey Trigger key
+     * @return boolean
+     */
     public boolean getMovesRight(int triggerKey) {
-        if (checkIfTriggered(triggerKey)) {
+        if (isTriggered(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_RIGHT) {
                     return true;
@@ -170,8 +254,14 @@ public class Block {
         return false;
     }
 
+    /**
+     * Get if the block moves left when the triggerKey is pressed
+     *
+     * @param triggerKey Trigger key
+     * @return boolean
+     */
     public boolean getMovesLeft(int triggerKey) {
-        if (checkIfTriggered(triggerKey)) {
+        if (isTriggered(triggerKey)) {
             for (int i = 0; i < moveDirection.length; i++) {
                 if (moveDirection[i] == MOVES_LEFT) {
                     return true;

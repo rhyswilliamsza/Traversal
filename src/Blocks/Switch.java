@@ -69,7 +69,7 @@ public class Switch extends Block {
 
     @Override
     public void moveMade(int triggerKey) {
-        if (checkIfTriggered(triggerKey)) {
+        if (isTriggered(triggerKey)) {
             if (status == OPEN_SWITCH) {
                 setClosedSwitch();
             } else if (status == CLOSED_SWITCH) {

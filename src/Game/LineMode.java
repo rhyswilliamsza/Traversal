@@ -10,10 +10,19 @@ import java.util.Scanner;
  * me@rhyswilliams.co.za
  */
 public class LineMode extends Core {
-    public LineMode(String path, String moves) {
-        super(path, LINEMODE);
+    /**
+     * Instantiate the LINEMODE version of the game
+     *
+     * @param boardPath Path of the board file
+     * @param movesPath Path of the moves file
+     */
+    public LineMode(String boardPath, String movesPath) {
+        //Instantiate the super core
+        super(boardPath, LINEMODE);
+
+        //Scan in the entire moves file and request moves from core for each key
         try {
-            Scanner moveScan = new Scanner(new File(moves)).useDelimiter("");
+            Scanner moveScan = new Scanner(new File(movesPath)).useDelimiter("");
             while (moveScan.hasNext()) {
                 String move = moveScan.next();
                 if (move.equals("q")) {
@@ -25,6 +34,8 @@ public class LineMode extends Core {
                 requestMove(move);
             }
             moveScan.close();
+
+            //Call output and call if not needed
             outputAndExit("");
         } catch (FileNotFoundException e) {
             e.printStackTrace();

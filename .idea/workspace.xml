@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f774b2f-f66e-4d81-a123-a64f9615a198" name="Default" comment="Fixed 'Open' and 'Closed' switchers">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_K.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_K.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_P.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_P.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_h.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_h.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_h_caps.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_h_caps.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_k_caps.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_k_caps.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_l.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_l.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_l_caps.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_l_caps.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_p_caps.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_p_caps.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_r.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_r.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_r_caps.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_r_caps.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_s.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_s.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_t.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_t.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_v.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_v.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_v_caps.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_v_caps.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Images/tvl_x.png" afterPath="$PROJECT_DIR$/src/Blocks/Images/tvl_x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="1f774b2f-f66e-4d81-a123-a64f9615a198" name="Default" comment="Fixed Horizontal Wrap Around">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Block.java" afterPath="$PROJECT_DIR$/src/Blocks/Block.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Blocks/Switch.java" afterPath="$PROJECT_DIR$/src/Blocks/Switch.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Core.java" afterPath="$PROJECT_DIR$/src/Game/Core.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Factories.java" afterPath="$PROJECT_DIR$/src/Game/Factories.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GraphicMode.java" afterPath="$PROJECT_DIR$/src/Game/GraphicMode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/LineMode.java" afterPath="$PROJECT_DIR$/src/Game/LineMode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Traversal.java" afterPath="$PROJECT_DIR$/src/Traversal.java" />
     </list>
     <ignored path="Traversal.iws" />
@@ -45,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testboard.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testboard.txt">
+      <file leaf-file-name="Traversal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Traversal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13051823">
-              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -59,23 +46,12 @@
         <entry file="file://$PROJECT_DIR$/src/Game/Core.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="270" column="39" selection-start-line="270" selection-start-column="39" selection-end-line="270" selection-end-column="39" />
+              <caret line="311" column="31" selection-start-line="311" selection-start-column="31" selection-end-line="311" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#GenerateBoard#0;class#Core#0" expanded="false" />
                 <element signature="method#requestMove#0;class#Core#0" expanded="false" />
-                <element signature="method#resetJustMovedStatus#0;class#Core#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Traversal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Traversal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -84,10 +60,64 @@
         <entry file="file://$PROJECT_DIR$/src/Game/GraphicMode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+              <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1241#1242#0" expanded="true" />
+                <element signature="e#1300#1301#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Block.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Blocks/Block.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.4683301">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding>
+                <element signature="method#Block#0;class#Block#0" expanded="false" />
+                <element signature="e#1962#1963#0" expanded="true" />
+                <element signature="e#2004#2005#0" expanded="true" />
+                <element signature="e#2127#2128#0" expanded="true" />
+                <element signature="e#2158#2159#0" expanded="true" />
+                <element signature="e#2281#2282#0" expanded="true" />
+                <element signature="e#2312#2313#0" expanded="true" />
+                <element signature="e#2447#2448#0" expanded="true" />
+                <element signature="e#2487#2488#0" expanded="true" />
+                <element signature="e#2622#2623#0" expanded="true" />
+                <element signature="e#2662#2663#0" expanded="true" />
+                <element signature="e#2820#2821#0" expanded="true" />
+                <element signature="e#2852#2853#0" expanded="true" />
+                <element signature="e#3032#3033#0" expanded="true" />
+                <element signature="e#3074#3075#0" expanded="true" />
+                <element signature="e#3257#3258#0" expanded="true" />
+                <element signature="e#3301#3302#0" expanded="true" />
+                <element signature="e#4388#4389#0" expanded="true" />
+                <element signature="e#4425#4426#0" expanded="true" />
+                <element signature="method#moveMade#0;class#Block#0" expanded="false" />
+                <element signature="method#playerTouched#0;class#Block#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Key.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Blocks/Key.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LineMode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/LineMode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,14 +179,14 @@
         <option value="$PROJECT_DIR$/src/Blocks/Ports.java" />
         <option value="$PROJECT_DIR$/src/Blocks/Key.java" />
         <option value="$PROJECT_DIR$/src/testBoard.txt" />
-        <option value="$PROJECT_DIR$/src/Game/LineMode.java" />
         <option value="$PROJECT_DIR$/src/Blocks/Switch.java" />
-        <option value="$PROJECT_DIR$/src/Game/Factories.java" />
-        <option value="$PROJECT_DIR$/src/Blocks/Block.java" />
-        <option value="$PROJECT_DIR$/src/Traversal.java" />
-        <option value="$PROJECT_DIR$/src/Game/GraphicMode.java" />
-        <option value="$PROJECT_DIR$/src/Game/Core.java" />
         <option value="$PROJECT_DIR$/testboard.txt" />
+        <option value="$PROJECT_DIR$/src/Game/Core.java" />
+        <option value="$PROJECT_DIR$/src/Traversal.java" />
+        <option value="$PROJECT_DIR$/src/Game/Factories.java" />
+        <option value="$PROJECT_DIR$/src/Game/LineMode.java" />
+        <option value="$PROJECT_DIR$/src/Blocks/Block.java" />
+        <option value="$PROJECT_DIR$/src/Game/GraphicMode.java" />
       </list>
     </option>
   </component>
@@ -200,6 +230,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,8 +302,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -770,7 +800,8 @@
       <workItem from="1462827966583" duration="968000" />
       <workItem from="1462830922186" duration="3093000" />
       <workItem from="1462867311902" duration="1067000" />
-      <workItem from="1462868748885" duration="1042000" />
+      <workItem from="1462868748885" duration="1368000" />
+      <workItem from="1462884083066" duration="2312000" />
     </task>
     <task id="LOCAL-00001" summary="Modulised">
       <created>1459325486981</created>
@@ -850,11 +881,17 @@
       <option name="project" value="LOCAL" />
       <updated>1462833004576</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed Horizontal Wrap Around">
+      <created>1462869815478</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1462869815478</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93735000" />
+    <option name="totallyTimeSpent" value="96373000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,7 +903,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -881,6 +918,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767624" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -891,7 +929,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767624" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -919,7 +956,8 @@
     <MESSAGE value="Fixed Output Messages" />
     <MESSAGE value="Added incorrect move option for 'q'" />
     <MESSAGE value="Fixed 'Open' and 'Closed' switchers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed 'Open' and 'Closed' switchers" />
+    <MESSAGE value="Fixed Horizontal Wrap Around" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Horizontal Wrap Around" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -946,7 +984,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GenerateBoard#0;class#Core#0" expanded="false" />
             <element signature="method#requestMove#0;class#Core#0" expanded="false" />
-            <element signature="method#resetJustMovedStatus#0;class#Core#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -974,9 +1011,7 @@
             <element signature="method#Block#0;class#Block#0" expanded="false" />
             <element signature="method#setActionWhenPlayerTouch#0;class#Block#0" expanded="false" />
             <element signature="method#getIcon#0;class#Block#0" expanded="false" />
-            <element signature="e#2884#2885#0" expanded="true" />
-            <element signature="e#2921#2922#0" expanded="true" />
-            <element signature="method#checkIfTriggered#0;class#Block#0" expanded="false" />
+            <element signature="method#isTriggered#0;class#Block#0" expanded="false" />
             <element signature="method#moveMade#0;class#Block#0" expanded="false" />
             <element signature="method#playerTouched#0;class#Block#0" expanded="false" />
             <element signature="method#getMovesUp#0;class#Block#0" expanded="false" />
@@ -995,7 +1030,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GenerateBoard#0;class#Core#0" expanded="false" />
             <element signature="method#requestMove#0;class#Core#0" expanded="false" />
-            <element signature="method#resetJustMovedStatus#0;class#Core#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1021,6 +1055,8 @@
           <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1041,7 +1077,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GenerateBoard#0;class#Core#0" expanded="false" />
             <element signature="method#requestMove#0;class#Core#0" expanded="false" />
-            <element signature="method#resetJustMovedStatus#0;class#Core#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1059,6 +1094,8 @@
           <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1079,7 +1116,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GenerateBoard#0;class#Core#0" expanded="false" />
             <element signature="method#requestMove#0;class#Core#0" expanded="false" />
-            <element signature="method#resetJustMovedStatus#0;class#Core#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1097,6 +1133,8 @@
           <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1117,7 +1155,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#GenerateBoard#0;class#Core#0" expanded="false" />
             <element signature="method#requestMove#0;class#Core#0" expanded="false" />
-            <element signature="method#resetJustMovedStatus#0;class#Core#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1135,6 +1172,8 @@
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1151,13 +1190,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/Wall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Blocks/Images/tvl_u.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1168,13 +1200,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/Target.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Blocks/Images/tvl_s.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1183,13 +1208,6 @@
     <entry file="file://$PROJECT_DIR$/src/Blocks/Images/tvl_r_caps.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/Mover.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41889116">
-          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Blocks/Images/tvl_k_caps.png">
@@ -1212,37 +1230,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/Ports.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/Key.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Blocks/Images/tvl_..png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/LineMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Blocks/Images/tvl_v_caps.png">
@@ -1267,21 +1257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Factories.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2208672">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/Switch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8197832">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Blocks/Images/tvl_v.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1302,41 +1277,92 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/Block.java">
+    <entry file="file://$PROJECT_DIR$/testboard.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2303523">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.13051823">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/Mover.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21689059">
+          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4568138">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
-            <element signature="method#Block#0;class#Block#0" expanded="false" />
-            <element signature="method#setActionWhenPlayerTouch#0;class#Block#0" expanded="false" />
-            <element signature="method#getIcon#0;class#Block#0" expanded="false" />
-            <element signature="e#2884#2885#0" expanded="true" />
-            <element signature="e#2921#2922#0" expanded="true" />
-            <element signature="method#checkIfTriggered#0;class#Block#0" expanded="false" />
-            <element signature="method#moveMade#0;class#Block#0" expanded="false" />
-            <element signature="method#playerTouched#0;class#Block#0" expanded="false" />
-            <element signature="method#getMovesUp#0;class#Block#0" expanded="false" />
-            <element signature="method#getMovesDown#0;class#Block#0" expanded="false" />
-            <element signature="method#getMovesRight#0;class#Block#0" expanded="false" />
-            <element signature="method#getMovesLeft#0;class#Block#0" expanded="false" />
+            <element signature="e#399#400#0" expanded="false" />
+            <element signature="e#444#445#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/GraphicMode.java">
+    <entry file="file://$PROJECT_DIR$/src/Blocks/Ports.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/Switch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/Wall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2284069">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/Target.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2284069">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Factories.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34552845">
+          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/LineMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/Key.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Traversal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1344,21 +1370,54 @@
     <entry file="file://$PROJECT_DIR$/src/Game/Core.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="270" column="39" selection-start-line="270" selection-start-column="39" selection-end-line="270" selection-end-column="39" />
+          <caret line="311" column="31" selection-start-line="311" selection-start-column="31" selection-end-line="311" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#GenerateBoard#0;class#Core#0" expanded="false" />
             <element signature="method#requestMove#0;class#Core#0" expanded="false" />
-            <element signature="method#resetJustMovedStatus#0;class#Core#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testboard.txt">
+    <entry file="file://$PROJECT_DIR$/src/Game/GraphicMode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13051823">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4683301">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="method#Block#0;class#Block#0" expanded="false" />
+            <element signature="e#1962#1963#0" expanded="true" />
+            <element signature="e#2004#2005#0" expanded="true" />
+            <element signature="e#2127#2128#0" expanded="true" />
+            <element signature="e#2158#2159#0" expanded="true" />
+            <element signature="e#2281#2282#0" expanded="true" />
+            <element signature="e#2312#2313#0" expanded="true" />
+            <element signature="e#2447#2448#0" expanded="true" />
+            <element signature="e#2487#2488#0" expanded="true" />
+            <element signature="e#2622#2623#0" expanded="true" />
+            <element signature="e#2662#2663#0" expanded="true" />
+            <element signature="e#2820#2821#0" expanded="true" />
+            <element signature="e#2852#2853#0" expanded="true" />
+            <element signature="e#3032#3033#0" expanded="true" />
+            <element signature="e#3074#3075#0" expanded="true" />
+            <element signature="e#3257#3258#0" expanded="true" />
+            <element signature="e#3301#3302#0" expanded="true" />
+            <element signature="e#4388#4389#0" expanded="true" />
+            <element signature="e#4425#4426#0" expanded="true" />
+            <element signature="method#moveMade#0;class#Block#0" expanded="false" />
+            <element signature="method#playerTouched#0;class#Block#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
