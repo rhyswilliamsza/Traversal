@@ -7,6 +7,9 @@ import javax.swing.*;
  * www.rhyswilliams.co.za
  * me@rhyswilliams.co.za
  */
+
+//todo Try simplify class
+
 public class Block {
     //Static actionWhenPlayerTouch Variables
     public final static int PASSOVER = 0;

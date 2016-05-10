@@ -55,6 +55,7 @@ public class GraphicMode extends Core {
     }
 
     public void draw() {
+        //todo Edit icons for all the different blocks
         gamePanel.removeAll();
         gamePanel.setBackground(new Color(37, 116, 169));
         gameFrame.setTitle("Rhys Williams | " + boardTitle);

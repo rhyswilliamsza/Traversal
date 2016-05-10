@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+//todo Add comments to everything
+
 /**
  * This file was created by Rhys Williams,
  * www.rhyswilliams.co.za
@@ -61,16 +63,16 @@ public class Core {
     public void requestMove(String key) {
         switch (key) {
             case "h":
-                moveRequest(Block.MOVES_LEFT);
+                manageMove(Block.MOVES_LEFT);
                 break;
             case "l":
-                moveRequest(Block.MOVES_RIGHT);
+                manageMove(Block.MOVES_RIGHT);
                 break;
             case "j":
-                moveRequest(Block.MOVES_DOWN);
+                manageMove(Block.MOVES_DOWN);
                 break;
             case "k":
-                moveRequest(Block.MOVES_UP);
+                manageMove(Block.MOVES_UP);
                 break;
             case "q": {
                 if (mode == GRAPHICMODE) {
@@ -80,45 +82,64 @@ public class Core {
         }
     }
 
-    private void moveRequest(int triggerKey) {
-        boolean moved = false;
-        for (int yPos = 0; yPos < board.length; yPos++) {
-            for (int xPos = 0; xPos < board[yPos].length; xPos++) {
-                for (int zPos = board[yPos][xPos].size() - 1; zPos >= 0; zPos--) {
-                    Block currentBlock = board[yPos][xPos].get(zPos);
-                    if (!currentBlock.getJustMoved()) {
+    private void manageMove(int triggerKey) {
 
-                        //Let block know that a move of triggerKey was made
-                        board[yPos][xPos].get(zPos).moveMade(triggerKey);
+        boolean doesMove = true;
+        /**
+         * Check that the player is not going off the board left or right
+         */
+        int coords[] = findPlayerCellCoords();
+        int y = coords[0];
+        int x = coords[1];
+        if (x == 0 && triggerKey == Block.MOVES_LEFT) {
+            doesMove = false;
+        }
+        if (x >= board[y].length - 1 && triggerKey == Block.MOVES_RIGHT) {
+            doesMove = false;
+        }
 
-                        //Check which move was made and run the doMove method
-                        if (currentBlock.getMovesUp(triggerKey)) {
-                            doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos - 1, xPos});
-                            moved = true;
-                        }
-                        if (currentBlock.getMovesDown(triggerKey)) {
-                            doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos + 1, xPos});
-                            moved = true;
-                        }
-                        if (currentBlock.getMovesLeft(triggerKey)) {
-                            doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos - 1});
-                            moved = true;
-                        }
-                        if (currentBlock.getMovesRight(triggerKey)) {
-                            doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos + 1});
-                            moved = true;
+        /**
+         * If the player is not going off left or right, do the move.
+         */
+        if (doesMove) {
+            boolean moved = false;
+            for (int yPos = 0; yPos < board.length; yPos++) {
+                for (int xPos = 0; xPos < board[yPos].length; xPos++) {
+                    for (int zPos = board[yPos][xPos].size() - 1; zPos >= 0; zPos--) {
+                        Block currentBlock = board[yPos][xPos].get(zPos);
+                        if (!currentBlock.getJustMoved()) {
+
+                            //Let block know that a move of triggerKey was made
+                            board[yPos][xPos].get(zPos).moveMade(triggerKey);
+
+                            //Check which move was made and run the doMove method
+                            if (currentBlock.getMovesUp(triggerKey)) {
+                                doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos - 1, xPos});
+                                moved = true;
+                            }
+                            if (currentBlock.getMovesDown(triggerKey)) {
+                                doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos + 1, xPos});
+                                moved = true;
+                            }
+                            if (currentBlock.getMovesLeft(triggerKey)) {
+                                doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos - 1});
+                                moved = true;
+                            }
+                            if (currentBlock.getMovesRight(triggerKey)) {
+                                doMove(new int[]{yPos, xPos, zPos}, new int[]{yPos, xPos + 1});
+                                moved = true;
+                            }
                         }
                     }
                 }
             }
-        }
 
-        //Do actions if any pieces were moved
-        if (moved) {
-            justMoved();
-            resetJustMovedStatus();
+            //Do actions if any pieces were moved
+            if (moved) {
+                justMoved();
+                resetJustMovedStatus();
+            }
         }
-
     }
 
     private void doMove(int[] source, int[] target) {
@@ -246,6 +267,8 @@ public class Core {
         if (!optionalMessage.isEmpty()) {
             System.out.println(optionalMessage);
         }
+
+        //todo Work out 'invalid moves'
         if (mode == LINEMODE) {
             for (int yPos = 0; yPos < board.length; yPos++) {
                 for (int xPos = 0; xPos < board[yPos].length; xPos++) {
