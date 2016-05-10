@@ -57,7 +57,7 @@ public class Core {
             for (int i = 0; i < ySize; i++) {
                 Scanner line = new Scanner(boardScan.nextLine()).useDelimiter("");
                 for (int j = 0; j < xSize; j++) {
-                    board[i][j] = new ArrayList<>();
+                    board[i][j] = new ArrayList<Block>();
                     board[i][j].add(Factories.makeBlock(line.next()));
                 }
                 line.close();
