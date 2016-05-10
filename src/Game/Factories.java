@@ -16,63 +16,63 @@ public class Factories {
      * @return The block object corresponding to the blockCode
      */
     public static Block makeBlock(String blockCode) {
-        switch (blockCode) {
-            case "s":
-            case "S": {
+        switch (blockCode.charAt(0)) {
+            case 's':
+            case 'S': {
                 return new Player();
             }
-            case "t":
-            case "T": {
+            case 't':
+            case 'T': {
                 return new Target();
             }
-            case "x":
-            case "X": {
+            case 'x':
+            case 'X': {
                 return new Wall();
             }
-            case "u": {
+            case 'u': {
                 return new Mover(Mover.HORIZONTAL_MOVER, Mover.MOVES_UP);
             }
-            case "d": {
+            case 'd': {
                 return new Mover(Mover.HORIZONTAL_MOVER, Mover.MOVES_DOWN);
             }
-            case "l": {
+            case 'l': {
                 return new Mover(Mover.HORIZONTAL_MOVER, Mover.MOVES_LEFT);
             }
-            case "r": {
+            case 'r': {
                 return new Mover(Mover.HORIZONTAL_MOVER, Mover.MOVES_RIGHT);
             }
-            case "U": {
+            case 'U': {
                 return new Mover(Mover.VERTICAL_MOVER, Mover.MOVES_UP);
             }
-            case "D": {
+            case 'D': {
                 return new Mover(Mover.VERTICAL_MOVER, Mover.MOVES_DOWN);
             }
-            case "L": {
+            case 'L': {
                 return new Mover(Mover.VERTICAL_MOVER, Mover.MOVES_LEFT);
             }
-            case "R": {
+            case 'R': {
                 return new Mover(Mover.VERTICAL_MOVER, Mover.MOVES_RIGHT);
             }
-            case "h": {
+            case 'h': {
                 return new Switch(Switch.CLOSED_SWITCH, Switch.HORIZONTAL_SWITCH);
             }
-            case "H": {
+            case 'H': {
                 return new Switch(Switch.OPEN_SWITCH, Switch.HORIZONTAL_SWITCH);
             }
-            case "V": {
+            case 'V': {
                 return new Switch(Switch.OPEN_SWITCH, Switch.VERTICAL_SWITCH);
             }
-            case "v": {
+            case 'v': {
                 return new Switch(Switch.CLOSED_SWITCH, Switch.VERTICAL_SWITCH);
             }
-            case "k":
-            case "K": {
+            case 'k':
+            case 'K': {
                 return new Key();
             }
-            case "p": {
+            case 'p': {
                 return new Ports(Ports.CLOSED);
             }
-            case "P": {
+            case 'P': {
                 return new Ports(Ports.OPEN);
             }
             default: {

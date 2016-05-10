@@ -73,8 +73,7 @@ public class Core {
      * @param key A letter from the keyboard
      */
     public void requestMove(String key) {
-        char keyChar = key.charAt(0);
-        switch (keyChar) {
+        switch (key.charAt(0)) {
             case 'h':
                 manageMove(Block.MOVES_LEFT);
                 break;
@@ -320,39 +319,39 @@ public class Core {
                 for (int xPos = 0; xPos < board[yPos].length; xPos++) {
                     ArrayList<Block> currentCell = board[yPos][xPos];
                     String currBlock = board[yPos][xPos].get(currentCell.size() - 1).getBlockType();
-                    switch (currBlock) {
-                        case "T":
-                        case "t":
+                    switch (currBlock.charAt(0)) {
+                        case 'T':
+                        case 't':
                             currBlock = "t";
                             break;
-                        case "X":
-                        case "x":
+                        case 'X':
+                        case 'x':
                             currBlock = "x";
                             break;
-                        case "K":
-                        case "k":
+                        case 'K':
+                        case 'k':
                             currBlock = "k";
                             break;
-                        case "H":
-                        case "V":
+                        case 'H':
+                        case 'V':
                             currBlock = "S";
                             break;
-                        case "h":
-                        case "v":
+                        case 'h':
+                        case 'v':
                             currBlock = "s";
                             break;
-                        case "u":
-                        case "d":
-                        case "l":
-                        case "r":
-                        case "U":
-                        case "D":
-                        case "L":
-                        case "R":
+                        case 'u':
+                        case 'd':
+                        case 'l':
+                        case 'r':
+                        case 'U':
+                        case 'D':
+                        case 'L':
+                        case 'R':
                             currBlock = "m";
                             break;
-                        case "S":
-                        case "s":
+                        case 'S':
+                        case 's':
                             currBlock = "Y";
                             break;
                     }
