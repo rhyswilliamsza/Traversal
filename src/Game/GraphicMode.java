@@ -13,6 +13,7 @@ import java.awt.event.KeyListener;
 public class GraphicMode extends Core {
     JFrame gameFrame;
     JPanel gamePanel;
+    JFrame splashFrame;
     KeyListener listener;
 
     /**
@@ -24,23 +25,59 @@ public class GraphicMode extends Core {
         //Call to super
         super(path, GRAPHICMODE);
 
+        //Generate Splash Screen
+        generateSplash();
+
         //Generate key listener
         generateKeyListener();
 
         //Generate frame for interface
-        generateFrame();
+        generateGameFrame();
 
         //Generate game panel
         generateGamePanel();
 
+        //Close Splash Screen
+        closeSplash();
+
         //Draw jFrame and show on jPanel
-        draw();
+        drawGameFrame();
+    }
+
+    private void generateSplash() {
+        //Code to generate splash screen frame
+        splashFrame = new JFrame();
+        splashFrame.setUndecorated(true);
+
+        //Generate splash screen panel
+        JPanel splashPanel = new JPanel();
+        JLabel image = new JLabel();
+        image.setIcon(new ImageIcon(this.getClass().getResource("/Blocks/Images/SplashScreen.png")));
+        splashPanel.add(image);
+        splashPanel.setPreferredSize(new Dimension(400, 250));
+        splashPanel.setBackground(new Color(17, 94, 122));
+
+        //Add panel to frame and display
+        splashFrame.add(splashPanel);
+        splashFrame.pack();
+        splashFrame.setLocationRelativeTo(null);
+        splashFrame.setVisible(true);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void closeSplash() {
+        splashFrame.setVisible(false);
     }
 
     /**
      * Generate the board JFrame
      */
-    private void generateFrame() {
+    private void generateGameFrame() {
         gameFrame = new JFrame();
         gameFrame.addKeyListener(listener);
         gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -71,7 +108,7 @@ public class GraphicMode extends Core {
                 requestMove("" + e.getKeyChar());
 
                 //Draw the changes
-                draw();
+                drawGameFrame();
             }
 
             @Override
@@ -84,7 +121,7 @@ public class GraphicMode extends Core {
     /**
      * Draw the array as the board
      */
-    public void draw() {
+    public void drawGameFrame() {
         //Remove all existing elements to prevent duplicates
         gamePanel.removeAll();
 
