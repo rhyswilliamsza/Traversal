@@ -81,12 +81,12 @@ public class Switch extends Block {
     public void setOpenSwitch() {
         this.status = OPEN_SWITCH;
         this.setBlockType(getBlockChar(OPEN_SWITCH, type));
-        this.setActionWhenPlayerTouch(Block.PASSOVER);
+        this.setActionWhenPlayerTouch(getActionWhenPlayerTouch(this.status));
     }
 
     public void setClosedSwitch() {
         this.status = CLOSED_SWITCH;
         this.setBlockType(getBlockChar(CLOSED_SWITCH, type));
-        this.setActionWhenPlayerTouch(Block.END_GAME);
+        this.setActionWhenPlayerTouch(getActionWhenPlayerTouch(this.status));
     }
 }

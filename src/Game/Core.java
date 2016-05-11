@@ -309,6 +309,7 @@ public class Core {
      * @param optionalMessage Add a message if you want it to appear on te top
      */
     public void outputAndExit(String optionalMessage) {
+
         if (!optionalMessage.isEmpty()) {
             System.out.println(optionalMessage);
         }

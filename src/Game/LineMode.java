@@ -25,7 +25,7 @@ public class LineMode extends Core {
             Scanner moveScan = new Scanner(new File(movesPath)).useDelimiter("");
             while (moveScan.hasNext()) {
                 String move = moveScan.next();
-                if (move.equals("q")) {
+                if (!"hjklx".contains(move)) {
                     outputAndExit("Incorrect move");
                 }
                 if (move.equals("x")) {
