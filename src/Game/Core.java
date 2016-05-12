@@ -306,6 +306,7 @@ public class Core {
 
     /**
      * Output the optional message and exit the program.
+     *
      * @param optionalMessage Add a message if you want it to appear on te top
      */
     public void outputAndExit(String optionalMessage) {
@@ -320,6 +321,7 @@ public class Core {
                 for (int xPos = 0; xPos < board[yPos].length; xPos++) {
                     ArrayList<Block> currentCell = board[yPos][xPos];
                     String currBlock = board[yPos][xPos].get(currentCell.size() - 1).getBlockType();
+
                     switch (currBlock.charAt(0)) {
                         case 'T':
                         case 't':
@@ -356,6 +358,13 @@ public class Core {
                             currBlock = "Y";
                             break;
                     }
+
+                    for (int i = 0; i < currentCell.size(); i++) {
+                        if (currentCell.get(i).getBlockType().equals("s")) {
+                            currBlock = "Y";
+                        }
+                    }
+
                     System.out.print(currBlock);
                 }
                 System.out.println();
